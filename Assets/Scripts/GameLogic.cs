@@ -18,7 +18,13 @@ public class GameLogic : MonoBehaviour
     {
         NewGame();
     }
-
+    private void Update()
+    {
+        if(this.lives <=0 && Input.anyKeyDown) //If player dies && any key is pushed
+        {
+            NewGame(); //Call NewGame method
+        }
+    }
     private void NewRound() //Start new round after game is over
     {
         foreach (Transform pellet in this.pellets)
