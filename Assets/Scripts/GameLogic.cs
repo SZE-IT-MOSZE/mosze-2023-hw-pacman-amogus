@@ -1,103 +1,70 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour
 {
-    public EnemyController[] enemies; //enemy array
+    public static GameLogic instance;
 
-    public PlayerController player; //player gameObject
-
-    public Transform pellets; //pickup gameObjects
-
-    public int score { get; private set; } //Score getter && setter
-
-    public int lives { get; private set; } //Lives getter && setter
-
-    private void Start()
+    private void Awake()
     {
-        NewGame();
+        instance = this;
     }
+
+    public int score;
+    public int lives = 3;
+
     private void Update()
     {
-        if(this.lives <=0 && Input.anyKeyDown) //If player dies && any key is pushed
+        if (SpawnManager.instance.spawnedPickups <= 0)
         {
-            NewGame(); //Call NewGame method
-        }
-    }
-    private void NewRound() //Start new round after game is over
-    {
-        foreach (Transform pellet in this.pellets)
-        {
-            pellet.gameObject.SetActive(true);
+            SpawnManager.instance.SpawnObjects();
         }
 
-        ResetState(); 
-    }
-
-    private void ResetState() //Reset enemies && player after player death
-    {
-        for (int i = 0; i < this.enemies.Length; i++)
+        if (Input.GetKeyDown(KeyCode.K))
         {
-            this.enemies[i].gameObject.SetActive(true);
+            KillPlayer();
         }
-
-        this.player.gameObject.SetActive(true);
     }
 
-    private void NewGame() //Start new game (reset score, lives, call NewRound method)
+    public void SetScore(int ScoreToAdd)
     {
-        SetScore(0);
-        SetLives(3);
-        NewRound();
+        score += ScoreToAdd;
     }
 
-    private void GameOver() //Set enemy gameObjects && player gameObject inactive
+    public void KillPlayer()
     {
-        for (int i = 0; i < this.enemies.Length; i++)
+        Destroy(GameObject.FindWithTag("Player"));
+
+        lives--;
+        SpawnManager.instance.playerSpawned = false;
+
+        if (lives <= 0)
         {
-            this.enemies[i].gameObject.SetActive(false);
-        }
-
-        this.player.gameObject.SetActive(false);
-    }
-
-    private void SetScore(int score) //Set score
-    {
-        this.score = score;
-    }
-
-    private void SetLives(int lives) //Set lives
-    {
-        this.lives = lives;
-    }
-
-    public void EnemyDeath(EnemyController enemy) //Add enemy points to score
-    {
-        SetScore(this.score + enemy.points);
-    }
-
-    public void PlayerDeath() //Set player gameObject inactive; subtract lives by 1; check if any lives remain (if not, call GameOver method)
-    {
-        this.player.gameObject.SetActive(false);
-
-        SetLives(this.lives - 1);
-
-        if (this.lives > 0)
-        {
-            StartCoroutine(WaitForDeath(3f)); //Call WaitForDeath coroutine (wait for X seconds)
+            StartCoroutine(WaitForEndGame());
         }
         else
         {
-            GameOver();
+            StartCoroutine(RespawnPlayer());
         }
     }
 
-    private IEnumerator WaitForDeath(float deathTime) //Pass in deathTime float && wait for x seconds before calling ResetState method
+    public void GameOver()
     {
-        yield return new WaitForSeconds(deathTime);
-        ResetState();
+        string currentScene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentScene);
+    }
+
+    private IEnumerator RespawnPlayer()
+    {
+        yield return new WaitForSeconds(1f);
+        SpawnManager.instance.SpawnPlayer();
+    }
+
+    private IEnumerator WaitForEndGame()
+    {
+        yield return new WaitForSeconds(3f);
+        GameOver();
     }
 }
-
-
