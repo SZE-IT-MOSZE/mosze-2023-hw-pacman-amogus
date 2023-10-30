@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SaveIndexCheck : MonoBehaviour
 {
-
     public static SaveIndexCheck instance;
 
     private void Awake()

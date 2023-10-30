@@ -88,8 +88,6 @@ public class EnemyController : MonoBehaviour
 
         direction = availableDirections[dir];
 
-        Debug.Log("Direction changed to: " + direction);
-
         dirChange = false;
     }
 

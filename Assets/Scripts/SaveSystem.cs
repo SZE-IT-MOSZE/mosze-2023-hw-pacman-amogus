@@ -26,16 +26,13 @@ public class SaveSystem : MonoBehaviour
         switch (type)
         {
             case sceneType.Generator:
-                Debug.Log("Generator scene");
                 AddObjectsFromGenerator();
                 break;
             case sceneType.Play:
-                Debug.Log("Play scene");
                 AddObjectsFromSave();
                 SpawnManager.instance.SpawnObjects();
                 break;
             default:
-                Debug.Log("Valami nem jó tesi xddd");
                 break;
         }
     }
