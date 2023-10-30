@@ -18,29 +18,29 @@ public class XMLSave : MonoBehaviour
 
     public SaveData saveData;
 
-    public void Save()
+    public void Save(int saveIndex)
     {
         Debug.Log("Saving data");
 
         string dataPath = Application.persistentDataPath;
 
         var serializer = new XmlSerializer(typeof(SaveData));
-        var stream = new FileStream(dataPath + "/testSave.save", FileMode.Create);
+        var stream = new FileStream(dataPath + "/testSave" + saveIndex + ".save", FileMode.Create);
 
         serializer.Serialize(stream, saveData);
         stream.Close();
     }
 
-     public void Load()
+     public void Load(int saveIndex)
     {
         string dataPath = Application.persistentDataPath;
 
-        if (File.Exists(dataPath + "/testSave.save"))
+        if (File.Exists(dataPath + "/testSave" + saveIndex + ".save"))
         {
             Debug.Log("Loading data");
 
             var serializer = new XmlSerializer(typeof(SaveData));
-            var stream = new FileStream(dataPath + "/testSave.save", FileMode.Open);
+            var stream = new FileStream(dataPath + "/testSave" + saveIndex + ".save", FileMode.Open);
             saveData = serializer.Deserialize(stream) as SaveData;
             stream.Close();
         }
@@ -50,10 +50,10 @@ public class XMLSave : MonoBehaviour
         }
     }
 
-    public void ClearSave()
+    public void ClearSave(int saveIndex)
     {
         Debug.Log("Deleted save file");
 
-        File.Delete(Application.persistentDataPath + "/testSave.save");
+        File.Delete(Application.persistentDataPath + "/testSave" + saveIndex + ".save");
     }
 }

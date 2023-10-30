@@ -137,9 +137,7 @@ public class MazeGenerator : MonoBehaviour
             }
         }
 
-        SpawnManager.instance.SpawnObjects();
-        SaveSystem.instance.AddObjectsFromGenerator();
-
+        SaveSystem.instance.OnLoad();
     }
   
     private HashSet<(int, int)> GetNeighborCells(int x, int y, bool CheckF)

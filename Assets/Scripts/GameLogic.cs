@@ -15,6 +15,11 @@ public class GameLogic : MonoBehaviour
     public int score;
     public int lives = 3;
 
+    private void Start()
+    {
+        SaveSystem.instance.OnLoad();
+    }
+
     private void Update()
     {
         if (SpawnManager.instance.spawnedPickups <= 0)

@@ -11,22 +11,32 @@ public class SaveSystem : MonoBehaviour
         instance = this;
     }
 
+    public enum sceneType
+    {
+        Generator,
+        Play
+    }
+    public sceneType type;
+
     public GameObject labPiece;
     public List<Transform> objects;
 
-    private void Update()
+    public void OnLoad()
     {
-        if (Input.GetKey(KeyCode.L))
+        switch (type)
         {
-            XMLSave.instance.Load();
-            AddObjectsFromSave();
-            SpawnManager.instance.SpawnObjects();
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            XMLSave.instance.ClearSave();
-            XMLSave.instance.Save();
+            case sceneType.Generator:
+                Debug.Log("Generator scene");
+                AddObjectsFromGenerator();
+                break;
+            case sceneType.Play:
+                Debug.Log("Play scene");
+                AddObjectsFromSave();
+                SpawnManager.instance.SpawnObjects();
+                break;
+            default:
+                Debug.Log("Valami nem jó tesi xddd");
+                break;
         }
     }
 
@@ -42,13 +52,14 @@ public class SaveSystem : MonoBehaviour
 
     public void AddObjectsFromSave()
     {
+        XMLSave.instance.Load(SaveIndexCheck.instance.saveIndex);
+
         for (int i = 0; i < XMLSave.instance.saveData.transforms.Count; i++)
         {
             Vector3 spawnPoint = new Vector3(0, 0, 0);
             spawnPoint = XMLSave.instance.saveData.transforms[i].position;
 
             Instantiate(labPiece, spawnPoint, Quaternion.identity, transform).gameObject.SetActive(XMLSave.instance.saveData.transforms[i].isActive);
-
         }
     }
 
