@@ -138,6 +138,7 @@ public class MazeGenerator : MonoBehaviour
         }
 
         SpawnManager.instance.SpawnObjects();
+        SaveSystem.instance.AddObjectsFromGenerator();
 
     }
   
