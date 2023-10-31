@@ -29,7 +29,9 @@ public class SaveSystem : MonoBehaviour
                 AddObjectsFromGenerator();
                 break;
             case sceneType.Play:
+                XMLSave.instance.Load(SaveIndexCheck.instance.saveIndex);
                 AddObjectsFromSave();
+                SetGameParameters();
                 SpawnManager.instance.SpawnObjects();
                 break;
             default:
@@ -49,8 +51,6 @@ public class SaveSystem : MonoBehaviour
 
     public void AddObjectsFromSave()
     {
-        XMLSave.instance.Load(SaveIndexCheck.instance.saveIndex);
-
         for (int i = 0; i < XMLSave.instance.saveData.transforms.Count; i++)
         {
             Vector3 spawnPoint = new Vector3(0, 0, 0);
@@ -58,6 +58,15 @@ public class SaveSystem : MonoBehaviour
 
             Instantiate(labPiece, spawnPoint, Quaternion.identity, transform).gameObject.SetActive(XMLSave.instance.saveData.transforms[i].isActive);
         }
+    }
+
+    public void SetGameParameters()
+    {
+        int playerLives = XMLSave.instance.saveData.lives;
+        GameLogic.instance.lives = playerLives;
+
+        int scoreGoal = XMLSave.instance.saveData.scoreGoal;
+        GameLogic.instance.scoreGoal = scoreGoal;
     }
 
     public void SaveObjects()

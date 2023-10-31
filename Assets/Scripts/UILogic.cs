@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
+using TMPro;
 
 public class UILogic : MonoBehaviour
 {
@@ -14,14 +15,39 @@ public class UILogic : MonoBehaviour
         instance = this; 
     }
 
+    public enum UItype
+    {
+        Generator,
+        Play
+    }
+    public UItype type;
+
+    [Header("Generator Scene settings")]
     public GameObject saveButtons;
     public GameObject loadButtons;
     public List<GameObject> loadList;
 
+    [Header("Play Scene settings")]
+    public GameObject gameOverText;
+    public TMP_Text livesText;
+    public TMP_Text scoreText;
+
     private void Start()
     {
-        ShowLoadButtons();
+        switch (type)
+        {
+            case UItype.Generator:
+                ShowLoadButtons();
+                break;
+            case UItype.Play:
+                SetLivesText(GameLogic.instance.lives);
+                break;
+            default:
+                break;
+        }
     }
+
+    //////GENERATOR UI//////
 
     public void RegenerateMaze()
     {
@@ -70,5 +96,22 @@ public class UILogic : MonoBehaviour
         SaveIndexCheck.instance.saveIndex = loadIndex;
 
         SceneManager.LoadScene("Play");
+    }
+
+    //////PLAY UI//////
+
+    public void SetLivesText(int lives)
+    {
+        livesText.text = "Lives: " + lives.ToString();
+    }
+
+    public void SetScoreText(int score)
+    {
+        scoreText.text = "Score: " + score.ToString();
+    }
+
+    public void ShowGameOverText()
+    {
+        gameOverText.gameObject.SetActive(true);
     }
 }

@@ -12,8 +12,11 @@ public class GameLogic : MonoBehaviour
         instance = this;
     }
 
+    [HideInInspector]
+    public int scoreGoal;
+
     public int score;
-    public int lives = 3;
+    public int lives;
 
     private void Start()
     {
@@ -36,6 +39,7 @@ public class GameLogic : MonoBehaviour
     public void SetScore(int ScoreToAdd)
     {
         score += ScoreToAdd;
+        UILogic.instance.SetScoreText(score);
     }
 
     public void KillPlayer()
@@ -43,10 +47,12 @@ public class GameLogic : MonoBehaviour
         Destroy(GameObject.FindWithTag("Player"));
 
         lives--;
+        UILogic.instance.SetLivesText(lives);
         SpawnManager.instance.playerSpawned = false;
 
         if (lives <= 0)
         {
+            UILogic.instance.ShowGameOverText();
             StartCoroutine(WaitForEndGame());
         }
         else
