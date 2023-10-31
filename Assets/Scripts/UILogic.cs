@@ -29,6 +29,7 @@ public class UILogic : MonoBehaviour
 
     [Header("Play Scene settings")]
     public GameObject gameOverText;
+    public GameObject invulnerabilityText;
     public TMP_Text livesText;
     public TMP_Text scoreText;
 
@@ -113,5 +114,17 @@ public class UILogic : MonoBehaviour
     public void ShowGameOverText()
     {
         gameOverText.gameObject.SetActive(true);
+    }
+
+    public void ShowInvulnerabilityText()
+    {
+        if (PlayerController.instance.invulnerable == true)
+        {
+            invulnerabilityText.gameObject.SetActive(true);
+        }
+        else
+        {
+            invulnerabilityText.gameObject.SetActive(false);
+        }
     }
 }

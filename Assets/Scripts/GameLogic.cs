@@ -70,12 +70,17 @@ public class GameLogic : MonoBehaviour
     private IEnumerator RespawnPlayer()
     {
         yield return new WaitForSeconds(1f);
+
         SpawnManager.instance.SpawnPlayer();
+
+        PlayerController.instance.invulnerable = true;
+        PlayerController.instance.Setinvulnerability();
     }
 
     private IEnumerator WaitForEndGame()
     {
         yield return new WaitForSeconds(3f);
+
         GameOver();
     }
 }

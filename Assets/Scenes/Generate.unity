@@ -311,8 +311,8 @@ GameObject:
   m_Component:
   - component: {fileID: 126975220}
   - component: {fileID: 126975221}
-  - component: {fileID: 126975219}
   - component: {fileID: 126975218}
+  - component: {fileID: 126975219}
   m_Layer: 0
   m_Name: MazeLogic
   m_TagString: Untagged
@@ -348,6 +348,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveData:
+    scoreGoal: 0
+    lives: 0
     transforms: []
 --- !u!4 &126975220
 Transform:
@@ -496,12 +498,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0d2b10468c6c074b87bef91acf33d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   saveButtons: {fileID: 1401948018}
   loadButtons: {fileID: 2051492038}
   loadList:
   - {fileID: 2009862081}
   - {fileID: 916935049}
   - {fileID: 1016521515}
+  gameOverText: {fileID: 0}
+  invulnerabilityText: {fileID: 0}
+  livesText: {fileID: 0}
+  scoreText: {fileID: 0}
 --- !u!1 &483901282
 GameObject:
   m_ObjectHideFlags: 0

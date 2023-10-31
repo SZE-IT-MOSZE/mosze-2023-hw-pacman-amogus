@@ -172,3 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   playerRb: {fileID: 50163679522738936}
+  body: {fileID: 2399733574100328416}
+  trigger: {fileID: 5514321168842794153}
+  invulnerable: 0
+  invulnerabilityTime: 3

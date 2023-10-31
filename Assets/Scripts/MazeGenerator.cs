@@ -9,10 +9,11 @@ public class MazeGenerator : MonoBehaviour
 
     const bool Ut = false;
 
+    [Header("Maze gameObject settings")]
     public GameObject _Fal_Prefab;
 
+    [Header("Maze Parameter settings")]
     public int Szelesseg;
-
     public int Magassag;
 
     private bool[,] Grid;

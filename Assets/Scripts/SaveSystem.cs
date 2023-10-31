@@ -16,8 +16,10 @@ public class SaveSystem : MonoBehaviour
         Generator,
         Play
     }
+    [Header("Save System settings")]
     public sceneType type;
 
+    [Header("Maze gameObject settings")]
     public GameObject labPiece;
     public List<Transform> objects;
 
