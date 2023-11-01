@@ -17,13 +17,18 @@ public class UILogic : MonoBehaviour
 
     public enum UItype
     {
+        Menu,
         Generator,
         Play
     }
     public UItype type;
 
+    [Header("Menu Scene settings")]
+    public GameObject deleteButton;
+
     [Header("Generator Scene settings")]
     public GameObject saveButtons;
+    public TMP_Text saveButtonText;
     public GameObject loadButtons;
     public List<GameObject> loadList;
 
@@ -37,6 +42,10 @@ public class UILogic : MonoBehaviour
     {
         switch (type)
         {
+            case UItype.Menu:
+                ShowLoadButtons();
+                ShowDeleteButton();
+                break;
             case UItype.Generator:
                 ShowLoadButtons();
                 break;
@@ -46,6 +55,54 @@ public class UILogic : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    //////MENU UI//////
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void ShowDeleteButton()
+    {
+        List<int> saves = new List<int>();
+
+        for (int i = 0; i < loadList.Count; i++)
+        {
+            if (File.Exists(Application.persistentDataPath + "/testSave" + (i + 1).ToString() + ".save"))
+            {
+                saves.Add(i);
+            }
+        }
+
+        if (saves.Count > 0)
+        {
+            deleteButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            deleteButton.gameObject.SetActive(false);
+        }
+    }
+
+    public void DeleteSaves()
+    {
+        for (int i = 0; i < loadList.Count; i++)
+        {
+            if (File.Exists(Application.persistentDataPath + "/testSave" + (i + 1).ToString() + ".save"))
+            {
+                File.Delete(Application.persistentDataPath + "/testSave" + (i + 1).ToString() + ".save");
+            }
+        }
+
+        ShowDeleteButton();
+        ShowLoadButtons();
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     //////GENERATOR UI//////
@@ -74,11 +131,13 @@ public class UILogic : MonoBehaviour
     {
         if (saveButtons.activeSelf) 
         {
+            saveButtonText.text = "Save";
             saveButtons.SetActive(false);
             loadButtons.SetActive(true);
         }
         else
         {
+            saveButtonText.text = "Back";
             saveButtons.SetActive(true);
             loadButtons.SetActive(false);
         }

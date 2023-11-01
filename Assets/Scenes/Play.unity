@@ -1342,8 +1342,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0d2b10468c6c074b87bef91acf33d73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 2
   saveButtons: {fileID: 0}
+  saveButtonText: {fileID: 0}
   loadButtons: {fileID: 0}
   loadList: []
   gameOverText: {fileID: 1441847350}
