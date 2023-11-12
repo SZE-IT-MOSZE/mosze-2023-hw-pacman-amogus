@@ -7,11 +7,15 @@ public class ButtonLogic : MonoBehaviour
     public enum ButtonType
     {
         Save,
-        Load
+        Load,
+        SceneChange
     }
     public ButtonType type;
 
+    [Header("Save System settings")]
     public int buttonIndex;
+    [Header("Scene Change settings")]
+    public string sceneName;
 
     public void ButtonPressed()
     {
@@ -22,6 +26,9 @@ public class ButtonLogic : MonoBehaviour
                 break;
             case ButtonType.Load:
                 UILogic.instance.LoadSlot(buttonIndex);
+                break;
+            case ButtonType.SceneChange:
+                UILogic.instance.LoadScene(sceneName);
                 break;
             default:
                 break;

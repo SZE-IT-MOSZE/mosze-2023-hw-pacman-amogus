@@ -5,8 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class SaveData
 {
-    //public int points;
-    //public int lives;
+    public int scoreGoal;
+    public int lives;
 
     public List<ObjectTransforms> transforms;
 }
