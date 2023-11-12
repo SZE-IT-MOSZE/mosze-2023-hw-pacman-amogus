@@ -170,9 +170,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167a6b178ca46fa49b6518e5e85d339e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 7
   playerRb: {fileID: 50163679522738936}
   body: {fileID: 2399733574100328416}
   trigger: {fileID: 5514321168842794153}
   invulnerable: 0
   invulnerabilityTime: 3
+  speedUp: 0
+  speedUpTime: 5
+  powerUp: 0
+  powerUpTime: 0

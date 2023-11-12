@@ -11,16 +11,21 @@ public class SpawnManager : MonoBehaviour
         instance = this;
     }
 
+    [Header("Actor GameObjects")]
     public PlayerController player;
     public EnemyController enemy;
+
+    [Header("Pickup Settings")]
+    public List<GameObject> pickups = new List<GameObject>();
     public GameObject pickupGameObject;
 
+    [Header("Spawn Settings")]
     public bool playerSpawned = false;
     public int spawnNumber;
     public int spawnedPickups;
-
     public int enemyNumber;
 
+    [Header("Spawn Lists")]
     public List<Transform> children = new List<Transform>();
     public List<Transform> spawnPoints = new List<Transform>();
 
@@ -50,6 +55,8 @@ public class SpawnManager : MonoBehaviour
             Vector3 spawnPosition = new Vector3(0, 0, 0);
             spawnPosition = spawnPoints[i].transform.position;
             spawnPosition.y += 1.5f;
+
+            pickupGameObject = pickups[Random.Range(0, pickups.Count)];
 
             Instantiate(pickupGameObject, spawnPosition, Quaternion.identity);
 

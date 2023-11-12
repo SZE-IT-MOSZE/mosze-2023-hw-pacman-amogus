@@ -349,7 +349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   saveData:
     scoreGoal: 0
-    lives: 0
+    lives: 3
     transforms: []
 --- !u!4 &126975220
 Transform:
@@ -497,6 +497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  deleteButton: {fileID: 0}
   saveButtons: {fileID: 1401948018}
   saveButtonText: {fileID: 1329629258}
   loadButtons: {fileID: 2051492038}

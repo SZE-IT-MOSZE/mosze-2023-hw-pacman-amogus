@@ -120,6 +120,12 @@ public class EnemyController : MonoBehaviour
         return false;
     }
 
+    public void KillEnemy()
+    {
+        GameLogic.instance.score += 1000;
+        Destroy(gameObject);
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "Node")
@@ -127,9 +133,14 @@ public class EnemyController : MonoBehaviour
             ChangeDir();
         }
 
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && PlayerController.instance.powerUp == false && PlayerController.instance.invulnerable == false)
         {
             GameLogic.instance.KillPlayer();
+        }
+
+        if (collision.tag == "Player" && PlayerController.instance.powerUp == true)
+        {
+            KillEnemy();
         }
     }
 }

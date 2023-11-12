@@ -29,11 +29,6 @@ public class GameLogic : MonoBehaviour
         {
             SpawnManager.instance.SpawnObjects();
         }
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            KillPlayer();
-        }
     }
 
     public void SetScore(int ScoreToAdd)
