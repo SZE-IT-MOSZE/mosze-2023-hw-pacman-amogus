@@ -838,6 +838,7 @@ MonoBehaviour:
   enemyNumber: 5
   children: []
   spawnPoints: []
+  isTest: 0
 --- !u!114 &1504896630
 MonoBehaviour:
   m_ObjectHideFlags: 0

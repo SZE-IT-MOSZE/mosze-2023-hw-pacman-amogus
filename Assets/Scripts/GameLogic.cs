@@ -53,18 +53,21 @@ public class GameLogic : MonoBehaviour
     {
         Destroy(GameObject.FindWithTag("Player"));
 
-        lives--;
-        UILogic.instance.SetLivesText(lives);
-        SpawnManager.instance.playerSpawned = false;
+        if (isTest == false)
+        {
+            lives--;
+            UILogic.instance.SetLivesText(lives);
+            SpawnManager.instance.playerSpawned = false;
 
-        if (lives <= 0)
-        {
-            UILogic.instance.ShowGameOverText();
-            StartCoroutine(WaitForEndGame());
-        }
-        else
-        {
-            StartCoroutine(RespawnPlayer());
+            if (lives <= 0)
+            {
+                UILogic.instance.ShowGameOverText();
+                StartCoroutine(WaitForEndGame());
+            }
+            else
+            {
+                StartCoroutine(RespawnPlayer());
+            }
         }
     }
 
@@ -78,7 +81,7 @@ public class GameLogic : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        SpawnManager.instance.SpawnPlayer();
+        SpawnManager.instance.GetPlayerSpawnPos();
 
         PlayerController.instance.invulnerable = true;
         PlayerController.instance.Setinvulnerability();

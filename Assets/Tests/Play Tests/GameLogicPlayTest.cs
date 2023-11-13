@@ -25,4 +25,39 @@ public class GameLogicPlayTest
         Assert.AreNotEqual(intialscore, resultscore);
 
     }
+
+    [UnityTest]
+    public IEnumerator GameLogicPlayerKilled()
+    {
+        GameObject player = new GameObject();
+
+        player.tag = "Player";
+
+        GameObject Go = new GameObject();
+
+        GameLogic gameLogic  = Go.AddComponent<GameLogic>();
+
+        gameLogic.isTest = true;
+
+        gameLogic.KillPlayer();
+
+        yield return new WaitForSeconds(1f);
+
+        GameObject playerobject = GameObject.FindGameObjectWithTag("Player");
+
+        bool playerkilled = false;
+
+        if (playerobject == null)
+        {
+            playerkilled = true;
+        }
+
+        Assert.IsTrue(playerkilled);
+
+
+    }
+
+    
+
 }
+
