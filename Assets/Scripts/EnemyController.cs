@@ -10,6 +10,8 @@ public class EnemyController : MonoBehaviour
 
     public float triggerRange = 1.8f;
 
+    public bool isTest = true;
+
     private bool firstSpawn = true;
     private bool dirChange;
     private Direction direction;
@@ -122,7 +124,10 @@ public class EnemyController : MonoBehaviour
 
     public void KillEnemy()
     {
-        GameLogic.instance.score += 1000;
+        if (isTest == false)
+        {
+            GameLogic.instance.score += 1000;
+        }
         Destroy(gameObject);
     }
 

@@ -18,23 +18,35 @@ public class GameLogic : MonoBehaviour
     public int score;
     public int lives;
 
+    public bool isTest = true;
+
     private void Start()
     {
-        SaveSystem.instance.OnLoad();
+        if (isTest == false)
+        {
+            SaveSystem.instance.OnLoad();
+        }
     }
 
     private void Update()
     {
-        if (SpawnManager.instance.spawnedPickups <= 0)
+        if (isTest == false)
         {
-            SpawnManager.instance.SpawnObjects();
+            if (SpawnManager.instance.spawnedPickups <= 0)
+            {
+                SpawnManager.instance.SpawnObjects();
+            }
         }
     }
 
     public void SetScore(int ScoreToAdd)
     {
         score += ScoreToAdd;
-        UILogic.instance.SetScoreText(score);
+
+        if (isTest == false)
+        {
+            UILogic.instance.SetScoreText(score);
+        }
     }
 
     public void KillPlayer()

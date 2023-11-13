@@ -151,4 +151,5 @@ MonoBehaviour:
   moveSpeed: 5
   points: 200
   triggerRange: 2
+  isTest: 0
   enemyRb: {fileID: 928654153435826184}
