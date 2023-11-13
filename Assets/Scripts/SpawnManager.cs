@@ -29,6 +29,9 @@ public class SpawnManager : MonoBehaviour
     public List<Transform> children = new List<Transform>();
     public List<Transform> spawnPoints = new List<Transform>();
 
+    [Header("Test Settings")]
+    public bool isTest = true;
+
     public void SpawnObjects()
     {
         children.Clear();
@@ -73,22 +76,35 @@ public class SpawnManager : MonoBehaviour
             Instantiate(enemy, spawnPosition, Quaternion.identity);
         }
 
-        SpawnPlayer();
+        GetPlayerSpawnPos();
     }
 
-    public void SpawnPlayer()
+    public void GetPlayerSpawnPos()
+    {
+        Vector3 spawnPosition = new Vector3(0, 0, 0);
+        int spawnIndex = Random.Range(0, children.Count);
+        spawnPosition = children[spawnIndex].transform.position;
+        spawnPosition.y += 1f;
+
+        children.RemoveAt(spawnIndex);
+
+        SpawnPlayer(spawnPosition);
+    }
+
+    public void SpawnPlayer(Vector3 playerPos)
     {
         if (playerSpawned == false)
         {
-            Vector3 spawnPosition = new Vector3(0, 0, 0);
-            int spawnIndex = Random.Range(0, children.Count);
-            spawnPosition = children[spawnIndex].transform.position;
-            spawnPosition.y += 1f;
-
-            Instantiate(player, spawnPosition, Quaternion.identity);
-            playerSpawned = true;
-
-            children.RemoveAt(spawnIndex);
+            if (isTest == false)
+            {
+                Instantiate(player, playerPos, Quaternion.identity);
+                playerSpawned = true;
+            }
+            else
+            {
+                GameObject playerPlaceholder = new GameObject();
+                playerPlaceholder.tag = "Player";
+            }
         }
     }
 }

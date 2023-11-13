@@ -14,6 +14,11 @@ public class PickupLogic : MonoBehaviour
 
     private int scoreValue;
 
+    public void DestroyPickup()
+    {
+        Destroy(gameObject);
+    }
+
     public void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "Player")
@@ -47,7 +52,7 @@ public class PickupLogic : MonoBehaviour
                     break;
             }
 
-            Destroy(gameObject);
+            DestroyPickup();
         }
     }
 }

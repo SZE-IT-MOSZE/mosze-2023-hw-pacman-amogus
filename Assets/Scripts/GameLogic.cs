@@ -18,61 +18,93 @@ public class GameLogic : MonoBehaviour
     public int score;
     public int lives;
 
+    [Header("Test settings")]
+    public bool isTest = true;
+    [HideInInspector]
+    public bool gameOver;
+
     private void Start()
     {
-        SaveSystem.instance.OnLoad();
+        if (isTest == false)
+        {
+            SaveSystem.instance.OnLoad();
+        }
     }
 
     private void Update()
     {
-        if (SpawnManager.instance.spawnedPickups <= 0)
+        if (isTest == false)
         {
-            SpawnManager.instance.SpawnObjects();
+            if (SpawnManager.instance.spawnedPickups <= 0)
+            {
+                SpawnManager.instance.SpawnObjects();
+            }
         }
     }
 
     public void SetScore(int ScoreToAdd)
     {
         score += ScoreToAdd;
-        UILogic.instance.SetScoreText(score);
+
+        if (isTest == false)
+        {
+            UILogic.instance.SetScoreText(score);
+        }
+    }
+
+    public void SetLives()
+    {
+        lives--;
+        if (isTest == false)
+        {
+            KillPlayer();
+        }
     }
 
     public void KillPlayer()
     {
         Destroy(GameObject.FindWithTag("Player"));
 
-        lives--;
-        UILogic.instance.SetLivesText(lives);
-        SpawnManager.instance.playerSpawned = false;
+        if (isTest == false)
+        {
+            UILogic.instance.SetLivesText(lives);
+            SpawnManager.instance.playerSpawned = false;
 
-        if (lives <= 0)
-        {
-            UILogic.instance.ShowGameOverText();
-            StartCoroutine(WaitForEndGame());
-        }
-        else
-        {
-            StartCoroutine(RespawnPlayer());
+            if (lives <= 0)
+            {
+                UILogic.instance.ShowGameOverText();
+                StartCoroutine(WaitForEndGame());
+            }
+            else
+            {
+                StartCoroutine(RespawnPlayer());
+            }
         }
     }
 
     public void GameOver()
     {
-        string currentScene = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentScene);
+        gameOver = true;
+
+        if (isTest == false)
+        {
+            string currentScene = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(currentScene);
+
+        }
     }
 
     private IEnumerator RespawnPlayer()
     {
         yield return new WaitForSeconds(1f);
 
-        SpawnManager.instance.SpawnPlayer();
+        SpawnManager.instance.GetPlayerSpawnPos();
 
         PlayerController.instance.invulnerable = true;
         PlayerController.instance.Setinvulnerability();
     }
 
-    private IEnumerator WaitForEndGame()
+    public IEnumerator WaitForEndGame()
     {
         yield return new WaitForSeconds(3f);
 
