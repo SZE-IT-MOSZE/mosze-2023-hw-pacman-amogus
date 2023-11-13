@@ -33,4 +33,26 @@ public class EnemyControllerPlayTests
 
         Assert.IsFalse(enemyexists);
     }
+
+    [UnityTest]
+    public IEnumerator EnemyMoveTest()
+    {
+        //Arrange
+        GameObject enemy = new GameObject();
+        enemy.AddComponent<Rigidbody>();
+
+        EnemyController enemyController = enemy.AddComponent<EnemyController>();
+
+        Vector3 initialPos = Vector3.zero;
+        enemyController.ChangeDir();
+
+        //Wait
+        yield return new WaitForSeconds(1f);
+
+        //Act
+        Vector3 resultPos = enemy.gameObject.transform.position;
+        
+        //Assert
+        Assert.AreNotEqual(initialPos, resultPos);
+    }
 }

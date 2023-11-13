@@ -14,12 +14,15 @@ public class EnemyController : MonoBehaviour
 
     private bool firstSpawn = true;
     private bool dirChange;
-    private Direction direction;
+
+    [HideInInspector]
+    public Direction direction;
     private Vector3 moveDir;
 
     public Rigidbody enemyRb;
 
-    private enum Direction
+    [HideInInspector]
+    public enum Direction
     {
         Up,
         Down,
@@ -29,6 +32,8 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
+        enemyRb = GetComponent<Rigidbody>();
+
         ChangeDir();
         firstSpawn = false;
     }
@@ -93,7 +98,7 @@ public class EnemyController : MonoBehaviour
         dirChange = false;
     }
 
-    private bool CheckCollision(Direction checkDirection)
+    public bool CheckCollision(Direction checkDirection)
     {
         Vector3 rayDirection = Vector3.zero;
 

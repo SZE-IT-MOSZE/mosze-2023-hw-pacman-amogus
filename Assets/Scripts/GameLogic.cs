@@ -18,7 +18,10 @@ public class GameLogic : MonoBehaviour
     public int score;
     public int lives;
 
+    [Header("Test settings")]
     public bool isTest = true;
+    [HideInInspector]
+    public bool gameOver;
 
     private void Start()
     {
@@ -49,13 +52,21 @@ public class GameLogic : MonoBehaviour
         }
     }
 
+    public void SetLives()
+    {
+        lives--;
+        if (isTest == false)
+        {
+            KillPlayer();
+        }
+    }
+
     public void KillPlayer()
     {
         Destroy(GameObject.FindWithTag("Player"));
 
         if (isTest == false)
         {
-            lives--;
             UILogic.instance.SetLivesText(lives);
             SpawnManager.instance.playerSpawned = false;
 
@@ -73,8 +84,14 @@ public class GameLogic : MonoBehaviour
 
     public void GameOver()
     {
-        string currentScene = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentScene);
+        gameOver = true;
+
+        if (isTest == false)
+        {
+            string currentScene = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(currentScene);
+
+        }
     }
 
     private IEnumerator RespawnPlayer()
@@ -87,7 +104,7 @@ public class GameLogic : MonoBehaviour
         PlayerController.instance.Setinvulnerability();
     }
 
-    private IEnumerator WaitForEndGame()
+    public IEnumerator WaitForEndGame()
     {
         yield return new WaitForSeconds(3f);
 

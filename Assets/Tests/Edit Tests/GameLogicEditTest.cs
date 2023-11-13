@@ -6,7 +6,6 @@ using UnityEngine.TestTools;
 
 public class GameLogicEditTest
 {
-    // A Test behaves as an ordinary method
     [Test]
     public void ScoreChangeTest()
     {
@@ -19,5 +18,33 @@ public class GameLogicEditTest
         int resultscore = scorekeep.score;
 
         Assert.AreNotEqual(initialscore, resultscore);
+    }
+    [Test]
+    public void LifeChangeTest()
+    {
+        //Arrange
+        GameLogic lifekeep = new GameLogic();
+        int initialLives = lifekeep.lives;
+
+        //Act
+        lifekeep.SetLives();
+        int resultLives = lifekeep.lives;
+
+        //Assert
+        Assert.AreNotEqual(initialLives, resultLives);
+    }
+    [Test]
+    public void GameOverTest()
+    {
+        //Arrange
+        GameLogic gameLogic = new GameLogic();
+        bool initialState = gameLogic.gameOver;
+
+        //Act
+        gameLogic.GameOver();
+        bool resultState = gameLogic.gameOver;
+
+        //Assert
+        Assert.AreNotEqual(initialState, resultState);
     }
 }

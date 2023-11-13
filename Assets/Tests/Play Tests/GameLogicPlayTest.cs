@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
@@ -23,7 +23,6 @@ public class GameLogicPlayTest
         yield return null;
 
         Assert.AreNotEqual(intialscore, resultscore);
-
     }
 
     [UnityTest]
@@ -53,11 +52,6 @@ public class GameLogicPlayTest
         }
 
         Assert.IsTrue(playerkilled);
-
-
     }
-
-    
-
 }
 

@@ -1,3 +1,4 @@
+using Codice.CM.WorkspaceServer.Tree.GameUI.Checkin.Updater;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,10 +28,11 @@ public class PlayerController : MonoBehaviour
     public bool speedUp;
     private float speedUpMoveSpeed = 14f;
     public float speedUpTime = 5f;
-
     public bool powerUp;
-    public float powerUpTime;
+    public float powerUpTime = 5f;
 
+    [Header("Test settings")]
+    public bool isTest = true;
 
     private void Update()
     {
@@ -67,7 +69,10 @@ public class PlayerController : MonoBehaviour
         {
             case true:
                 moveSpeed = speedUpMoveSpeed;
-                StartCoroutine(SpeedUpTimer());
+                if (isTest == false)
+                {
+                    StartCoroutine(SpeedUpTimer());
+                }
                 break;
             case false:
                 moveSpeed = 7f;
