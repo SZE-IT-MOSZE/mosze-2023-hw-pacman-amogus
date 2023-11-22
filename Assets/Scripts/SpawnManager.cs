@@ -32,7 +32,7 @@ public class SpawnManager : MonoBehaviour
     [Header("Test Settings")]
     public bool isTest = true;
 
-    public void SpawnObjects()
+    public void GetSpawnPositions()
     {
         children.Clear();
         spawnPoints.Clear();
@@ -52,6 +52,16 @@ public class SpawnManager : MonoBehaviour
 
             children.RemoveAt(spawnIndex);
         }
+        
+        if (playerSpawned == false)
+        {
+            GetPlayerSpawnPos();
+        }
+    }
+
+    public void SpawnPickups()
+    {
+        GetSpawnPositions();
 
         for (int i = 0; i < spawnPoints.Count; i++)
         {
@@ -65,6 +75,11 @@ public class SpawnManager : MonoBehaviour
 
             spawnedPickups++;
         }
+    }
+
+    public void SpawnEnemies()
+    {
+        GetSpawnPositions();
 
         for (int i = 0; i <= enemyNumber; i++)
         {
@@ -75,8 +90,6 @@ public class SpawnManager : MonoBehaviour
 
             Instantiate(enemy, spawnPosition, Quaternion.identity);
         }
-
-        GetPlayerSpawnPos();
     }
 
     public void GetPlayerSpawnPos()

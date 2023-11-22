@@ -34,7 +34,8 @@ public class SaveSystem : MonoBehaviour
                 XMLSave.instance.Load(SaveIndexCheck.instance.saveIndex);
                 AddObjectsFromSave();
                 SetGameParameters();
-                SpawnManager.instance.SpawnObjects();
+                SpawnManager.instance.SpawnPickups();
+                SpawnManager.instance.SpawnEnemies();
                 break;
             default:
                 break;

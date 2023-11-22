@@ -34,19 +34,17 @@ public class PickupLogic : MonoBehaviour
                 case PickupType.SpeedUp:
                     scoreValue = 200;
                     GameLogic.instance.SetScore(scoreValue);
+                    SpawnManager.instance.spawnedPickups--;
 
                     PlayerController.instance.speedUp = true;
                     PlayerController.instance.SetSpeedUp();
-                    PlayerController.instance.StartCoroutine(PlayerController.instance.SpeedUpTimer());
-
                     break;
                 case PickupType.PowerUp:
                     scoreValue = 500;
                     GameLogic.instance.SetScore(scoreValue);
+                    SpawnManager.instance.spawnedPickups--;
 
-                    PlayerController.instance.powerUp = true;
-                    PlayerController.instance.StartCoroutine(PlayerController.instance.PowerUpTimer());
-
+                    PlayerController.instance.SetPowerUp();
                     break;
                 default:
                     break;

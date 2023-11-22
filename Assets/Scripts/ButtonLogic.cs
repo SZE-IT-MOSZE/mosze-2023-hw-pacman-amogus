@@ -6,6 +6,7 @@ public class ButtonLogic : MonoBehaviour
 {
     public enum ButtonType
     {
+        Resume,
         Save,
         Load,
         SceneChange
@@ -21,6 +22,10 @@ public class ButtonLogic : MonoBehaviour
     {
         switch (type)
         {
+            case ButtonType.Resume:
+                UILogic.instance.isPaused = false;
+                UILogic.instance.ShowPauseMenu();
+                break;
             case ButtonType.Save:
                 UILogic.instance.SaveSlot(buttonIndex);
                 break;
