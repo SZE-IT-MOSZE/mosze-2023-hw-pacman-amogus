@@ -1,4 +1,3 @@
-using Codice.CM.WorkspaceServer.Tree.GameUI.Checkin.Updater;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,7 +28,7 @@ public class PlayerController : MonoBehaviour
     private float speedUpMoveSpeed = 14f;
     public float speedUpTime = 5f;
     public bool powerUp;
-    public float powerUpTime = 5f;
+    public float powerUpTime = 10f;
 
     [Header("Test settings")]
     public bool isTest = true;
@@ -80,6 +79,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void SetPowerUp()
+    {
+        powerUp = true;
+        StartCoroutine(PowerUpTimer());
+    }
+
     public IEnumerator InvulnerabilityTimer()
     {
         yield return new WaitForSeconds(invulnerabilityTime);
@@ -99,6 +104,7 @@ public class PlayerController : MonoBehaviour
     public IEnumerator PowerUpTimer()
     {
         yield return new WaitForSeconds(powerUpTime);
+
         powerUp = false;
     }
 }

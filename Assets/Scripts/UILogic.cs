@@ -33,10 +33,12 @@ public class UILogic : MonoBehaviour
     public List<GameObject> loadList;
 
     [Header("Play Scene settings")]
+    public GameObject pauseMenu;
     public GameObject gameOverText;
     public GameObject invulnerabilityText;
     public TMP_Text livesText;
     public TMP_Text scoreText;
+    public bool isPaused;
 
     private void Start()
     {
@@ -50,10 +52,28 @@ public class UILogic : MonoBehaviour
                 ShowLoadButtons();
                 break;
             case UItype.Play:
+                Time.timeScale = 1f;
                 SetLivesText(GameLogic.instance.lives);
                 break;
             default:
                 break;
+        }
+    }
+
+    private void Update()
+    {
+        if (type == UItype.Play)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape) && isPaused == false)
+            {
+                isPaused = true;
+                ShowPauseMenu();
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape) && isPaused == true)
+            {
+                isPaused = false;
+                ShowPauseMenu();
+            }
         }
     }
 
@@ -184,6 +204,21 @@ public class UILogic : MonoBehaviour
         else
         {
             invulnerabilityText.gameObject.SetActive(false);
+        }
+    }
+
+    public void ShowPauseMenu()
+    {
+        switch (isPaused)
+        {
+            case true:
+                Time.timeScale = 0f;
+                pauseMenu.gameObject.SetActive(true);
+                break;
+            case false:
+                Time.timeScale = 1f;
+                pauseMenu.gameObject.SetActive(false);
+                break;
         }
     }
 }

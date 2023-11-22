@@ -505,10 +505,12 @@ MonoBehaviour:
   - {fileID: 2009862081}
   - {fileID: 916935049}
   - {fileID: 1016521515}
+  pauseMenu: {fileID: 0}
   gameOverText: {fileID: 0}
   invulnerabilityText: {fileID: 0}
   livesText: {fileID: 0}
   scoreText: {fileID: 0}
+  isPaused: 0
 --- !u!1 &483901282
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,7 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf174314a962734cbcad037958934e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   buttonIndex: 2
   sceneName: 
 --- !u!1 &705507993
@@ -1166,7 +1168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf174314a962734cbcad037958934e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 2
   buttonIndex: 2
   sceneName: 
 --- !u!1 &963194225
@@ -1407,7 +1409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf174314a962734cbcad037958934e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   buttonIndex: 1
   sceneName: 
 --- !u!1 &1016521515
@@ -1556,7 +1558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf174314a962734cbcad037958934e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 2
   buttonIndex: 3
   sceneName: 
 --- !u!1 &1261662702
@@ -1705,7 +1707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf174314a962734cbcad037958934e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   buttonIndex: 3
   sceneName: 
 --- !u!1 &1328550630
@@ -3255,7 +3257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf174314a962734cbcad037958934e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 2
   buttonIndex: 1
   sceneName: 
 --- !u!1 &2051492038

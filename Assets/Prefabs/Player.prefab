@@ -175,8 +175,9 @@ MonoBehaviour:
   body: {fileID: 2399733574100328416}
   trigger: {fileID: 5514321168842794153}
   invulnerable: 0
-  invulnerabilityTime: 3
+  invulnerabilityTime: 5
   speedUp: 0
-  speedUpTime: 5
+  speedUpTime: 10
   powerUp: 0
-  powerUpTime: 0
+  powerUpTime: 10
+  isTest: 1
