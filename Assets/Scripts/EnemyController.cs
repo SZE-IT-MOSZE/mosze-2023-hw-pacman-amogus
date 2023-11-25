@@ -145,7 +145,7 @@ public class EnemyController : MonoBehaviour
 
         if (collision.tag == "Player" && PlayerController.instance.powerUp == false && PlayerController.instance.invulnerable == false)
         {
-            GameLogic.instance.KillPlayer();
+            GameLogic.instance.SetLives();
         }
 
         if (collision.tag == "Player" && PlayerController.instance.powerUp == true)
