@@ -180,4 +180,4 @@ MonoBehaviour:
   speedUpTime: 10
   powerUp: 0
   powerUpTime: 10
-  isTest: 1
+  isTest: 0

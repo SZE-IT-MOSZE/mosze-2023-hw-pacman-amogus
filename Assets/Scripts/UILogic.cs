@@ -90,7 +90,7 @@ public class UILogic : MonoBehaviour
 
         for (int i = 0; i < loadList.Count; i++)
         {
-            if (File.Exists(Application.persistentDataPath + "/testSave" + (i + 1).ToString() + ".save"))
+            if (File.Exists(Application.persistentDataPath + "/" + XMLSave.saveName + (i + 1).ToString() + ".save"))
             {
                 saves.Add(i);
             }
@@ -110,9 +110,9 @@ public class UILogic : MonoBehaviour
     {
         for (int i = 0; i < loadList.Count; i++)
         {
-            if (File.Exists(Application.persistentDataPath + "/testSave" + (i + 1).ToString() + ".save"))
+            if (File.Exists(Application.persistentDataPath + "/" + XMLSave.saveName + (i + 1).ToString() + ".save"))
             {
-                File.Delete(Application.persistentDataPath + "/testSave" + (i + 1).ToString() + ".save");
+                File.Delete(Application.persistentDataPath + "/" + XMLSave.saveName + (i + 1).ToString() + ".save");
             }
         }
 
@@ -136,7 +136,7 @@ public class UILogic : MonoBehaviour
     {
         for (int i = 0; i < loadList.Count; i++)
         {
-            if (File.Exists(Application.persistentDataPath + "/testSave" + (i+1).ToString() + ".save"))
+            if (File.Exists(Application.persistentDataPath + "/" + XMLSave.saveName + (i+1).ToString() + ".save"))
             {
                 loadList[i].gameObject.SetActive(true);
             }
