@@ -9,7 +9,8 @@ public class ButtonLogic : MonoBehaviour
         Resume,
         Save,
         Load,
-        SceneChange
+        SceneChange,
+        Difficulty
     }
     public ButtonType type;
 
@@ -17,6 +18,9 @@ public class ButtonLogic : MonoBehaviour
     public int buttonIndex;
     [Header("Scene Change settings")]
     public string sceneName;
+    [Header("Difficulty settings")]
+    public int scoreGoal;
+    public string difficulty;
 
     public void ButtonPressed()
     {
@@ -34,6 +38,10 @@ public class ButtonLogic : MonoBehaviour
                 break;
             case ButtonType.SceneChange:
                 UILogic.instance.LoadScene(sceneName);
+                break;
+            case ButtonType.Difficulty:
+                SaveSystem.instance.SaveGameParameters(scoreGoal);
+                UILogic.instance.SetDifficultyText(difficulty);
                 break;
             default:
                 break;

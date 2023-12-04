@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
                 moveSpeed = speedUpMoveSpeed;
                 if (isTest == false)
                 {
-                    StartCoroutine(SpeedUpTimer());
+                    StartCoroutine(PowerUpTimer("SpeedUp", speedUpTime));
                 }
                 break;
             case false:
@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
     public void SetPowerUp()
     {
         powerUp = true;
-        StartCoroutine(PowerUpTimer());
+        StartCoroutine(PowerUpTimer("PowerUp", powerUpTime));
     }
 
     public IEnumerator InvulnerabilityTimer()
@@ -93,18 +93,19 @@ public class PlayerController : MonoBehaviour
         Setinvulnerability();
     }
 
-    public IEnumerator SpeedUpTimer()
-    {
-        yield return new WaitForSeconds(speedUpTime);
-
-        speedUp = false;
-        SetSpeedUp();
-    }
-
-    public IEnumerator PowerUpTimer()
+    public IEnumerator PowerUpTimer(string powerUpType, float powerUpTime)
     {
         yield return new WaitForSeconds(powerUpTime);
 
-        powerUp = false;
-    }
+        switch (powerUpType)
+        {
+            case "SpeedUp":
+                speedUp = false;
+                SetSpeedUp();
+                break;
+            case "PowerUp":
+                powerUp = false;
+                break;
+        }
+    } 
 }

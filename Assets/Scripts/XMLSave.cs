@@ -5,8 +5,6 @@ using UnityEngine;
 using System.IO;
 using System.Xml.Serialization;
 
-using UnityEditor;
-
 public class XMLSave : MonoBehaviour
 {
     public static XMLSave instance;

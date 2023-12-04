@@ -14,14 +14,18 @@ public class GameLogic : MonoBehaviour
 
     [HideInInspector]
     public int scoreGoal;
+    [HideInInspector]
+    public bool isEndless;
+    [HideInInspector]
+    public bool gameOver;
+    [HideInInspector]
+    public bool isWin;
 
     public int score;
     public int lives;
 
     [Header("Test settings")]
     public bool isTest = true;
-    [HideInInspector]
-    public bool gameOver;
 
     private void Start()
     {
@@ -38,6 +42,20 @@ public class GameLogic : MonoBehaviour
             if (SpawnManager.instance.spawnedPickups <= 0)
             {
                 SpawnManager.instance.SpawnPickups();
+            }
+
+            if (SpawnManager.instance.spawnedEnemies <= 0)
+            {
+                SpawnManager.instance.SpawnEnemies();
+            }
+
+            if (isEndless == false)
+            {
+                if (score >= scoreGoal)
+                {
+                    isWin = true;
+                    GameOver();
+                }
             }
         }
     }
@@ -67,6 +85,8 @@ public class GameLogic : MonoBehaviour
 
         if (isTest == false)
         {
+            SFXLogic.instance.PlaySFX(0);
+
             UILogic.instance.SetLivesText(lives);
             SpawnManager.instance.playerSpawned = false;
 
@@ -88,9 +108,16 @@ public class GameLogic : MonoBehaviour
 
         if (isTest == false)
         {
-            string currentScene = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currentScene);
-
+            if (isWin == true)
+            {
+                Time.timeScale = 0f;
+                UILogic.instance.ShowWinImage();
+            }
+            else
+            {
+                string currentScene = SceneManager.GetActiveScene().name;
+                SceneManager.LoadScene(currentScene);
+            }
         }
     }
 

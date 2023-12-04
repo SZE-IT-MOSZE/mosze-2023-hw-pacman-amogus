@@ -29,11 +29,15 @@ public class SaveSystem : MonoBehaviour
         {
             case sceneType.Generator:
                 AddObjectsFromGenerator();
+                SaveGameParameters(1000);
+                UILogic.instance.SetDifficultyText("Medium");
+                UILogic.instance.SetInfinite();
                 break;
             case sceneType.Play:
                 XMLSave.instance.Load(SaveIndexCheck.instance.saveIndex);
                 AddObjectsFromSave();
                 SetGameParameters();
+                SpawnManager.instance.SpawnNodes();
                 SpawnManager.instance.SpawnPickups();
                 SpawnManager.instance.SpawnEnemies();
                 break;
@@ -70,6 +74,9 @@ public class SaveSystem : MonoBehaviour
 
         int scoreGoal = XMLSave.instance.saveData.scoreGoal;
         GameLogic.instance.scoreGoal = scoreGoal;
+
+        bool isEndless = XMLSave.instance.saveData.isEndless;
+        GameLogic.instance.isEndless = isEndless;
     }
 
     public void SaveObjects()
@@ -85,5 +92,10 @@ public class SaveSystem : MonoBehaviour
 
             XMLSave.instance.saveData.transforms.Add(transformData);
         }
+    }
+
+    public void SaveGameParameters(int scoreGoal)
+    {
+        XMLSave.instance.saveData.scoreGoal = scoreGoal;
     }
 }

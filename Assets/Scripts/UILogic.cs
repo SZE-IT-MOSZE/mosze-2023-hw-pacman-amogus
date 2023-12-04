@@ -1,10 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
 using TMPro;
+using UnityEngine.UI;
 
 public class UILogic : MonoBehaviour
 {
@@ -31,10 +30,13 @@ public class UILogic : MonoBehaviour
     public TMP_Text saveButtonText;
     public GameObject loadButtons;
     public List<GameObject> loadList;
+    public TMP_Text difficultyText;
+    public Toggle infiniteToggle;
 
     [Header("Play Scene settings")]
     public GameObject pauseMenu;
     public GameObject gameOverText;
+    public GameObject winScreen;
     public GameObject invulnerabilityText;
     public TMP_Text livesText;
     public TMP_Text scoreText;
@@ -178,6 +180,23 @@ public class UILogic : MonoBehaviour
         SceneManager.LoadScene("Play");
     }
 
+    public void SetDifficultyText(string difficulty)
+    {
+        difficultyText.text = difficulty;
+    }
+
+    public void SetInfinite()
+    {
+        if (infiniteToggle.isOn)
+        {
+            XMLSave.instance.saveData.isEndless = true;
+        }
+        else
+        {
+            XMLSave.instance.saveData.isEndless = false;
+        }
+    }
+
     //////PLAY UI//////
 
     public void SetLivesText(int lives)
@@ -193,6 +212,11 @@ public class UILogic : MonoBehaviour
     public void ShowGameOverText()
     {
         gameOverText.gameObject.SetActive(true);
+    }
+
+    public void ShowWinImage()
+    {
+        winScreen.gameObject.SetActive(true);
     }
 
     public void ShowInvulnerabilityText()
@@ -213,10 +237,12 @@ public class UILogic : MonoBehaviour
         {
             case true:
                 Time.timeScale = 0f;
+                SFXLogic.instance.PlayBGM(isPaused);
                 pauseMenu.gameObject.SetActive(true);
                 break;
             case false:
                 Time.timeScale = 1f;
+                SFXLogic.instance.PlayBGM(isPaused);
                 pauseMenu.gameObject.SetActive(false);
                 break;
         }
