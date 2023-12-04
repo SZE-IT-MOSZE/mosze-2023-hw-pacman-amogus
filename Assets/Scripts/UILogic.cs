@@ -237,10 +237,12 @@ public class UILogic : MonoBehaviour
         {
             case true:
                 Time.timeScale = 0f;
+                SFXLogic.instance.PlayBGM(isPaused);
                 pauseMenu.gameObject.SetActive(true);
                 break;
             case false:
                 Time.timeScale = 1f;
+                SFXLogic.instance.PlayBGM(isPaused);
                 pauseMenu.gameObject.SetActive(false);
                 break;
         }

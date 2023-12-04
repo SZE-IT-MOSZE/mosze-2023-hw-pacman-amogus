@@ -85,6 +85,8 @@ public class GameLogic : MonoBehaviour
 
         if (isTest == false)
         {
+            SFXLogic.instance.PlaySFX(0);
+
             UILogic.instance.SetLivesText(lives);
             SpawnManager.instance.playerSpawned = false;
 
