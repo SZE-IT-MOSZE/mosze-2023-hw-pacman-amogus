@@ -20,10 +20,12 @@ public class SpawnManager : MonoBehaviour
     public GameObject pickupGameObject;
 
     [Header("Spawn Settings")]
+    public GameObject nodeGameObject;
     public bool playerSpawned = false;
     public int spawnNumber;
     public int spawnedPickups;
     public int enemyNumber;
+    public int spawnedEnemies;
 
     [Header("Spawn Lists")]
     public List<Transform> children = new List<Transform>();
@@ -89,6 +91,22 @@ public class SpawnManager : MonoBehaviour
             spawnPosition.y += 1f;
 
             Instantiate(enemy, spawnPosition, Quaternion.identity);
+
+            spawnedEnemies++;
+        }
+    }
+
+    public void SpawnNodes()
+    {
+        GetSpawnPositions();
+
+        for (int i = 0; i < children.Count; i++)
+        {
+            Vector3 spawnPosition = new Vector3(0, 0, 0);
+            spawnPosition = children[i].transform.position;
+            spawnPosition.y += 2f;
+
+            Instantiate(nodeGameObject, spawnPosition, Quaternion.identity);
         }
     }
 

@@ -39,6 +39,11 @@ public class GameLogic : MonoBehaviour
             {
                 SpawnManager.instance.SpawnPickups();
             }
+
+            if (SpawnManager.instance.spawnedEnemies <= 0)
+            {
+                SpawnManager.instance.SpawnEnemies();
+            }
         }
     }
 

@@ -14,9 +14,11 @@ public class EnemyController : MonoBehaviour
 
     private bool firstSpawn = true;
     private bool dirChange;
+    private bool dirChangeNode;
 
     [HideInInspector]
     public Direction direction;
+    public List<string> nodeDirections = new List<string>();
     private Vector3 moveDir;
 
     public Rigidbody enemyRb;
@@ -77,25 +79,62 @@ public class EnemyController : MonoBehaviour
     {
         dirChange = true;
 
-        List<Direction> availableDirections = new List<Direction>
+        if (dirChangeNode == false)
         {
+            List<Direction> availableDirections = new List<Direction>
+            {
             Direction.Up,
             Direction.Down,
             Direction.Left,
             Direction.Right
-        };
+            };
 
-        if (firstSpawn == false)
-        {
-            int currentDirectionIndex = (int)direction;
-            availableDirections.RemoveAt(currentDirectionIndex);
+            if (firstSpawn == false)
+            {
+                int currentDirectionIndex = (int)direction;
+                availableDirections.RemoveAt(currentDirectionIndex);
+            }
+
+            int dir = UnityEngine.Random.Range(0, availableDirections.Count);
+
+            direction = availableDirections[dir];
+
+            dirChange = false;
         }
+        else
+        {
+            List<Direction> availableDirections = new List<Direction>();
 
-        int dir = UnityEngine.Random.Range(0, availableDirections.Count);
+            for (int i = 0; i < nodeDirections.Count; i++)
+            {
+                switch (nodeDirections[i])
+                {
+                    case "Up":
+                        availableDirections.Add(Direction.Up);
+                        break;
+                    case "Down":
+                        availableDirections.Add(Direction.Down);
+                        break;
+                    case "Left":
+                        availableDirections.Add(Direction.Left);
+                        break;
+                    case "Right":
+                        availableDirections.Add(Direction.Right);
+                        break;
+                    default:
+                        break;
+                }
+            }
 
-        direction = availableDirections[dir];
+            int dir = UnityEngine.Random.Range(0, availableDirections.Count);
 
-        dirChange = false;
+            direction = availableDirections[dir];
+
+            nodeDirections.Clear();
+            dirChangeNode = false;
+
+            StartCoroutine(WaitForNodeTrigger(.35f));
+        }
     }
 
     public bool CheckCollision(Direction checkDirection)
@@ -131,7 +170,8 @@ public class EnemyController : MonoBehaviour
     {
         if (isTest == false)
         {
-            GameLogic.instance.score += 1000;
+            GameLogic.instance.SetScore(1000);
+            SpawnManager.instance.spawnedEnemies--;
         }
         Destroy(gameObject);
     }
@@ -140,6 +180,8 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.tag == "Node")
         {
+            nodeDirections = new List<string>(collision.GetComponent<NodeLogic>().avalibleDirections);
+            dirChangeNode = true;
             ChangeDir();
         }
 
@@ -152,5 +194,12 @@ public class EnemyController : MonoBehaviour
         {
             KillEnemy();
         }
+    }
+
+    private IEnumerator WaitForNodeTrigger(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        dirChange = false;
     }
 }
