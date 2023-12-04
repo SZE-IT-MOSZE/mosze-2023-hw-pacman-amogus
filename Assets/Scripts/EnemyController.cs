@@ -6,7 +6,6 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public int points = 200;
 
     public float triggerRange = 1.8f;
 
@@ -18,7 +17,7 @@ public class EnemyController : MonoBehaviour
 
     [HideInInspector]
     public Direction direction;
-    public List<string> nodeDirections = new List<string>();
+    private List<string> nodeDirections = new List<string>();
     private Vector3 moveDir;
 
     public Rigidbody enemyRb;

@@ -6,6 +6,7 @@ using UnityEngine;
 public class SaveData
 {
     public int scoreGoal;
+    public bool isEndless;
     public int lives;
 
     public List<ObjectTransforms> transforms;
