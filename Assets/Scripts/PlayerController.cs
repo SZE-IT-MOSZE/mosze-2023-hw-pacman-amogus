@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -16,7 +15,6 @@ public class PlayerController : MonoBehaviour
 
     [Header("Collider settings")]
     public Rigidbody playerRb;
-    public CapsuleCollider body;
     public BoxCollider trigger;
 
     [Header("Invulnerability settings")]
@@ -49,12 +47,10 @@ public class PlayerController : MonoBehaviour
         switch (invulnerable)
         {
             case true:
-                body.enabled = false;
                 trigger.enabled = false;
                 StartCoroutine(InvulnerabilityTimer());
                 break;
             case false:
-                body.enabled = true;
                 trigger.enabled = true;
                 break;
         }
@@ -107,5 +103,5 @@ public class PlayerController : MonoBehaviour
                 powerUp = false;
                 break;
         }
-    } 
+    }
 }

@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour
 {
@@ -49,6 +47,11 @@ public class GameLogic : MonoBehaviour
                 SpawnManager.instance.SpawnEnemies();
             }
 
+            if (SpawnManager.instance.spawnedTraps <= 0)
+            {
+                SpawnManager.instance.SpawnTraps();
+            }
+
             if (isEndless == false)
             {
                 if (score >= scoreGoal)
@@ -92,7 +95,6 @@ public class GameLogic : MonoBehaviour
 
             if (lives <= 0)
             {
-                UILogic.instance.ShowGameOverText();
                 StartCoroutine(WaitForEndGame());
             }
             else
@@ -111,12 +113,12 @@ public class GameLogic : MonoBehaviour
             if (isWin == true)
             {
                 Time.timeScale = 0f;
-                UILogic.instance.ShowWinImage();
+                UILogic.instance.ShowEndScreen(true);
             }
             else
             {
-                string currentScene = SceneManager.GetActiveScene().name;
-                SceneManager.LoadScene(currentScene);
+                Time.timeScale = 0f;
+                UILogic.instance.ShowEndScreen(false);
             }
         }
     }
