@@ -20,6 +20,7 @@ public class EnemyController : MonoBehaviour
     private Vector3 moveDir;
 
     public Rigidbody enemyRb;
+    public GameObject enemyModel;
 
     [HideInInspector]
     public enum Direction
@@ -97,6 +98,8 @@ public class EnemyController : MonoBehaviour
 
             direction = availableDirections[dir];
 
+            ChangeModelDirection();
+
             dirChange = false;
         }
         else
@@ -164,6 +167,25 @@ public class EnemyController : MonoBehaviour
         return false;
     }
 
+    public void ChangeModelDirection()
+    {
+        switch (direction)
+        {
+            case Direction.Up:
+                enemyModel.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+                break;
+            case Direction.Down:
+                enemyModel.gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+                break;
+            case Direction.Left:
+                enemyModel.gameObject.transform.rotation = Quaternion.Euler(0, -90, 0);
+                break;
+            case Direction.Right:
+                enemyModel.gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
+                break;
+        }
+    }
+
     public void KillEnemy()
     {
         if (isTest == false)
@@ -197,6 +219,8 @@ public class EnemyController : MonoBehaviour
     private IEnumerator WaitForNodeTrigger(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
+
+        ChangeModelDirection();
 
         dirChange = false;
     }

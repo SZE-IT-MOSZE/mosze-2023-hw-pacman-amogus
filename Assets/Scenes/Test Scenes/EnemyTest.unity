@@ -498,6 +498,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3015182230260394907, guid: 0b2da246de0efaa48aaba2d976cf8b9b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6154933924066903344, guid: 0b2da246de0efaa48aaba2d976cf8b9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -930,7 +934,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  bearTrapTime: 0
   mineRange: {fileID: 1872046967}
+  mineArmTime: 0
 --- !u!65 &1430776497
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1502,10 +1508,6 @@ PrefabInstance:
     - target: {fileID: 2285590620486388882, guid: 26932f4ae9e2ae942b181fb9fe2cb35a, type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 2285590620486388882, guid: 26932f4ae9e2ae942b181fb9fe2cb35a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5211997837640476844, guid: 26932f4ae9e2ae942b181fb9fe2cb35a, type: 3}
       propertyPath: m_LocalPosition.x
