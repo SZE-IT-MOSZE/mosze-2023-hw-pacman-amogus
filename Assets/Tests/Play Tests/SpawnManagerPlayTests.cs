@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using NUnit.Framework;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
 
 public class SpawnManagerPlayTests
 {
-   
+
     [UnityTest]
     public IEnumerator SpawnPlayerTest()
     {

@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using NUnit.Framework;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
 
 public class EnemyControllerPlayTests
 {
-   
+
     [UnityTest]
     public IEnumerator KillEnemyTest()
     {
@@ -14,7 +13,7 @@ public class EnemyControllerPlayTests
 
         enemy.tag = "Enemy";
 
-        EnemyController enemyController= enemy.AddComponent<EnemyController>();
+        EnemyController enemyController = enemy.AddComponent<EnemyController>();
 
         enemyController.isTest = true;
 
@@ -26,7 +25,7 @@ public class EnemyControllerPlayTests
 
         bool enemyexists = true;
 
-        if(go == null)
+        if (go == null)
         {
             enemyexists = false;
         }
@@ -51,7 +50,7 @@ public class EnemyControllerPlayTests
 
         //Act
         Vector3 resultPos = enemy.gameObject.transform.position;
-        
+
         //Assert
         Assert.AreNotEqual(initialPos, resultPos);
     }

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -40,6 +39,7 @@ public class SaveSystem : MonoBehaviour
                 SpawnManager.instance.SpawnNodes();
                 SpawnManager.instance.SpawnPickups();
                 SpawnManager.instance.SpawnEnemies();
+                SpawnManager.instance.SpawnTraps();
                 break;
             default:
                 break;

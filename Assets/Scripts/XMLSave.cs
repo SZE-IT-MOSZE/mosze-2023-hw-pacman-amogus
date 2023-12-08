@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 using System.IO;
 using System.Xml.Serialization;
+using UnityEngine;
 
 public class XMLSave : MonoBehaviour
 {
@@ -29,7 +26,7 @@ public class XMLSave : MonoBehaviour
         stream.Close();
     }
 
-     public void Load(int saveIndex)
+    public void Load(int saveIndex)
     {
         string dataPath = Application.persistentDataPath;
 

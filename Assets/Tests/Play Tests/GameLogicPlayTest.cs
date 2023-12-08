@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using NUnit.Framework;
+﻿using NUnit.Framework;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
 
 public class GameLogicPlayTest
 {
-   
+
     [UnityTest]
     public IEnumerator GameLogicPlayScore()
     {
@@ -34,7 +33,7 @@ public class GameLogicPlayTest
 
         GameObject Go = new GameObject();
 
-        GameLogic gameLogic  = Go.AddComponent<GameLogic>();
+        GameLogic gameLogic = Go.AddComponent<GameLogic>();
 
         gameLogic.isTest = true;
 

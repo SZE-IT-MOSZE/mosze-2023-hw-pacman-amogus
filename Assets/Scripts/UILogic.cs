@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.IO;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UILogic : MonoBehaviour
@@ -11,7 +11,7 @@ public class UILogic : MonoBehaviour
 
     private void Awake()
     {
-        instance = this; 
+        instance = this;
     }
 
     public enum UItype
@@ -37,6 +37,7 @@ public class UILogic : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject gameOverText;
     public GameObject winScreen;
+    public GameObject loseScreen;
     public GameObject invulnerabilityText;
     public TMP_Text livesText;
     public TMP_Text scoreText;
@@ -138,7 +139,7 @@ public class UILogic : MonoBehaviour
     {
         for (int i = 0; i < loadList.Count; i++)
         {
-            if (File.Exists(Application.persistentDataPath + "/" + XMLSave.saveName + (i+1).ToString() + ".save"))
+            if (File.Exists(Application.persistentDataPath + "/" + XMLSave.saveName + (i + 1).ToString() + ".save"))
             {
                 loadList[i].gameObject.SetActive(true);
             }
@@ -151,7 +152,7 @@ public class UILogic : MonoBehaviour
 
     public void ShowSaveButtons()
     {
-        if (saveButtons.activeSelf) 
+        if (saveButtons.activeSelf)
         {
             saveButtonText.text = "Save";
             saveButtons.SetActive(false);
@@ -209,14 +210,16 @@ public class UILogic : MonoBehaviour
         scoreText.text = "Score: " + score.ToString();
     }
 
-    public void ShowGameOverText()
+    public void ShowEndScreen(bool isWin)
     {
-        gameOverText.gameObject.SetActive(true);
-    }
-
-    public void ShowWinImage()
-    {
-        winScreen.gameObject.SetActive(true);
+        if (isWin == true)
+        {
+            winScreen.gameObject.SetActive(true);
+        }
+        else if (isWin == false)
+        {
+            loseScreen.gameObject.SetActive(true);
+        }
     }
 
     public void ShowInvulnerabilityText()

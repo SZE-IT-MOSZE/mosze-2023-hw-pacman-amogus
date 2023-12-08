@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,12 +18,20 @@ public class SpawnManager : MonoBehaviour
     public List<GameObject> pickups = new List<GameObject>();
     public GameObject pickupGameObject;
 
+    [Header("Trap Settings")]
+    public GameObject trapGameObject;
+    public int trapNumber;
+    [HideInInspector]
+    public int spawnedTraps;
+
     [Header("Spawn Settings")]
     public GameObject nodeGameObject;
     public bool playerSpawned = false;
     public int spawnNumber;
+    [HideInInspector]
     public int spawnedPickups;
     public int enemyNumber;
+    [HideInInspector]
     public int spawnedEnemies;
 
     [Header("Spawn Lists")]
@@ -54,7 +61,7 @@ public class SpawnManager : MonoBehaviour
 
             children.RemoveAt(spawnIndex);
         }
-        
+
         if (playerSpawned == false)
         {
             GetPlayerSpawnPos();
@@ -107,6 +114,23 @@ public class SpawnManager : MonoBehaviour
             spawnPosition.y += 2f;
 
             Instantiate(nodeGameObject, spawnPosition, Quaternion.identity);
+        }
+    }
+
+    public void SpawnTraps()
+    {
+        GetSpawnPositions();
+
+        for (int i = 0; i <= trapNumber; i++)
+        {
+            Vector3 spawnPosition = new Vector3(0, 0, 0);
+            int spawnIndex = Random.Range(0, children.Count);
+            spawnPosition = children[spawnIndex].transform.position;
+            spawnPosition.y += 1f;
+
+            Instantiate(trapGameObject, spawnPosition, Quaternion.identity);
+
+            spawnedTraps++;
         }
     }
 

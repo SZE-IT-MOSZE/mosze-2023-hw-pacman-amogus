@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using UnityEngine;
 using System.Linq;
+using UnityEngine;
 
 
 public class MazeGenerator : MonoBehaviour
@@ -23,51 +23,51 @@ public class MazeGenerator : MonoBehaviour
     private Vector2 bejarat;
     private Vector2 kijarat;
 
-    
+
     void Start()
-    {  
+    {
         GenerateNewRandomMaze();
     }
 
     private void GenerateBejarat()
     {
-        int bejaratOldal = Random.Range(0,4);
-        int kijaratOldal = (bejaratOldal + Random.Range(1,4)) % 4;
+        int bejaratOldal = Random.Range(0, 4);
+        int kijaratOldal = (bejaratOldal + Random.Range(1, 4)) % 4;
 
-        switch(bejaratOldal)
+        switch (bejaratOldal)
         {
             case 0:     //bal
-                bejarat = new Vector2(0,Random.Range(1 , Magassag - 1 ));
+                bejarat = new Vector2(0, Random.Range(1, Magassag - 1));
                 break;
             case 1:     //jobb
-                bejarat = new Vector2(Szelesseg - 1 , Random.Range(1 , Magassag - 1));
+                bejarat = new Vector2(Szelesseg - 1, Random.Range(1, Magassag - 1));
                 break;
             case 2:     //felső
-                bejarat = new Vector2(Random.Range(1 , Szelesseg - 1) , Magassag - 1);
+                bejarat = new Vector2(Random.Range(1, Szelesseg - 1), Magassag - 1);
                 break;
             case 3:     //also
-                bejarat = new Vector2(Random.Range(1 , Szelesseg - 1) , 0);
-                break;        
+                bejarat = new Vector2(Random.Range(1, Szelesseg - 1), 0);
+                break;
         }
 
-        switch(kijaratOldal)
+        switch (kijaratOldal)
         {
             case 0:     //bal
-                kijarat = new Vector2(0 , Random.Range(1 , Magassag - 1));
+                kijarat = new Vector2(0, Random.Range(1, Magassag - 1));
                 break;
             case 1:     //jobb
-                kijarat = new Vector2(Szelesseg - 1 , Random.Range(1 ,Magassag - 1));
+                kijarat = new Vector2(Szelesseg - 1, Random.Range(1, Magassag - 1));
                 break;
             case 2:     //felső
-                kijarat = new Vector2(Random.Range(1 , Szelesseg - 1 ) , Magassag - 1);
+                kijarat = new Vector2(Random.Range(1, Szelesseg - 1), Magassag - 1);
                 break;
             case 3:     //alsó
-                kijarat = new Vector2(Random.Range(1 , Szelesseg - 1) , 0);
+                kijarat = new Vector2(Random.Range(1, Szelesseg - 1), 0);
                 break;
         }
 
-        Grid[(int)bejarat.x , (int) bejarat.y] = Ut;
-        Grid[(int)kijarat.x , (int) kijarat.y] = Ut;
+        Grid[(int)bejarat.x, (int)bejarat.y] = Ut;
+        Grid[(int)kijarat.x, (int)kijarat.y] = Ut;
     }
 
     private void GenerateNewRandomMaze()
@@ -77,7 +77,7 @@ public class MazeGenerator : MonoBehaviour
 
         GenerateBejarat();
 
-       for (int x = 0; x < Szelesseg; x++)
+        for (int x = 0; x < Szelesseg; x++)
         {
             for (int y = 0; y < Magassag; y++)
             {
@@ -101,7 +101,7 @@ public class MazeGenerator : MonoBehaviour
             Grid[randomFcellaX, randomFcellaY] = Ut;
 
             HashSet<(int, int)> nevezoCella = GetNeighborCells(randomFcellaX, randomFcellaY, false);
-            if (nevezoCella.Any()) 
+            if (nevezoCella.Any())
             {
                 int randomNevezoIndex = Random.Range(0, nevezoCella.Count);
                 (int, int) randomCellaKapcsolat = nevezoCella.ElementAt(randomNevezoIndex);
@@ -140,7 +140,7 @@ public class MazeGenerator : MonoBehaviour
 
         SaveSystem.instance.OnLoad();
     }
-  
+
     private HashSet<(int, int)> GetNeighborCells(int x, int y, bool CheckF)
     {
         HashSet<(int, int)> szomszedCellak = new HashSet<(int, int)>();
