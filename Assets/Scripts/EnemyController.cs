@@ -98,7 +98,10 @@ public class EnemyController : MonoBehaviour
 
             direction = availableDirections[dir];
 
-            ChangeModelDirection();
+            if (isTest == false)
+            {
+                ChangeModelDirection();
+            }
 
             dirChange = false;
         }
@@ -220,7 +223,11 @@ public class EnemyController : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
 
-        ChangeModelDirection();
+        if (isTest == false)
+        {
+            ChangeModelDirection();
+
+        }
 
         dirChange = false;
     }
