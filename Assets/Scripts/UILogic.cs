@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -24,6 +25,11 @@ public class UILogic : MonoBehaviour
 
     [Header("Menu Scene settings")]
     public GameObject deleteButton;
+    public GameObject mainScreen;
+    public GameObject optionsScreen;
+    public AudioMixer mainMixer;
+    public Toggle sfxToggle;
+    public Toggle bgmToggle;
 
     [Header("Generator Scene settings")]
     public GameObject saveButtons;
@@ -41,15 +47,21 @@ public class UILogic : MonoBehaviour
     public GameObject invulnerabilityText;
     public TMP_Text livesText;
     public TMP_Text scoreText;
+    [HideInInspector]
     public bool isPaused;
+    [HideInInspector]
+    public bool audioPlayed;
 
     private void Start()
     {
+        Time.timeScale = 1f;
+
         switch (type)
         {
             case UItype.Menu:
                 ShowLoadButtons();
                 ShowDeleteButton();
+                AudioOptionChange();
                 break;
             case UItype.Generator:
                 ShowLoadButtons();
@@ -123,6 +135,41 @@ public class UILogic : MonoBehaviour
         ShowLoadButtons();
     }
 
+    public void ShowOptions()
+    {
+        if (optionsScreen.activeInHierarchy == false)
+        {
+            optionsScreen.SetActive(true);
+            mainScreen.SetActive(false);
+        }
+        else
+        {
+            optionsScreen.SetActive(false);
+            mainScreen.SetActive(true);
+        }
+    }
+
+    public void AudioOptionChange()
+    {
+        if (sfxToggle.isOn)
+        {
+            mainMixer.SetFloat("SFXvolume", 0f);
+        }
+        else
+        {
+            mainMixer.SetFloat("SFXvolume", -80f);
+        }
+
+        if (bgmToggle.isOn)
+        {
+            mainMixer.SetFloat("BGMvolume", -20f);
+        }
+        else
+        {
+            mainMixer.SetFloat("BGMvolume", -80f);
+        }
+    }
+
     public void QuitGame()
     {
         Application.Quit();
@@ -178,7 +225,7 @@ public class UILogic : MonoBehaviour
     {
         SaveIndexCheck.instance.saveIndex = loadIndex;
 
-        SceneManager.LoadScene("Play");
+        SceneManager.LoadScene("Cutscene");
     }
 
     public void SetDifficultyText(string difficulty)
@@ -214,7 +261,13 @@ public class UILogic : MonoBehaviour
     {
         if (isWin == true)
         {
+            SFXLogic.instance.PlayBGM(true);
             winScreen.gameObject.SetActive(true);
+            if (audioPlayed == false)
+            {
+                audioPlayed = true;
+                SFXLogic.instance.PlaySFX(4);
+            }
         }
         else if (isWin == false)
         {
