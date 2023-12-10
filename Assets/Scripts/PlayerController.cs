@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
         instance = this;
     }
 
+    public GameObject playerModel;
+
     [Header("Movement settings")]
     public float moveSpeed = 7f;
 
@@ -38,6 +40,12 @@ public class PlayerController : MonoBehaviour
         movement.z = Input.GetAxisRaw("Vertical");
 
         movement.Normalize();
+
+        if (movement != Vector3.zero)
+        {
+            Quaternion newRotation = Quaternion.LookRotation(movement);
+            playerModel.transform.rotation = Quaternion.Lerp(playerModel.transform.rotation, newRotation, Time.deltaTime * moveSpeed);
+        }
 
         playerRb.velocity = movement * moveSpeed;
     }

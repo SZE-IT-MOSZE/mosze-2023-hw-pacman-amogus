@@ -25,12 +25,14 @@ public class PickupLogic : MonoBehaviour
             {
                 case PickupType.Basic:
                     scoreValue = 100;
+                    SFXLogic.instance.PlaySFX(5);
                     GameLogic.instance.SetScore(scoreValue);
                     SpawnManager.instance.spawnedPickups--;
 
                     break;
                 case PickupType.SpeedUp:
                     scoreValue = 200;
+                    SFXLogic.instance.PlaySFX(6);
                     GameLogic.instance.SetScore(scoreValue);
                     SpawnManager.instance.spawnedPickups--;
 
@@ -39,6 +41,7 @@ public class PickupLogic : MonoBehaviour
                     break;
                 case PickupType.PowerUp:
                     scoreValue = 500;
+                    SFXLogic.instance.PlaySFX(7);
                     GameLogic.instance.SetScore(scoreValue);
                     SpawnManager.instance.spawnedPickups--;
 
