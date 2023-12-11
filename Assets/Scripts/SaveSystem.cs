@@ -1,14 +1,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// A SaveSystem osztály felelős a játékállapot mentéséért és betöltéséért.
+/// </summary>
 public class SaveSystem : MonoBehaviour
 {
+
+    /// <summary>
+    /// A SaveSystem egyetlen példánya (Singleton).
+    /// </summary>
+
     public static SaveSystem instance;
 
     private void Awake()
     {
         instance = this;
     }
+
+    /// <summary>
+    /// Felsorolás a jelenet típusával kapcsolatos beállításokhoz.
+    /// </summary>
 
     public enum sceneType
     {
@@ -21,6 +33,10 @@ public class SaveSystem : MonoBehaviour
     [Header("Maze gameObject settings")]
     public GameObject labPiece;
     public List<Transform> objects;
+
+    /// <summary>
+    /// Metódus amely az adatok betöltését végzi a jelenet típusától függően.
+    /// </summary>
 
     public void OnLoad()
     {
@@ -46,6 +62,10 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gyermek objektum hozzáadása az objektumok listájához mentés előtt.
+    /// </summary>
+
     public void AddObjectsFromGenerator()
     {
         foreach (Transform child in transform)
@@ -55,6 +75,10 @@ public class SaveSystem : MonoBehaviour
 
         SaveObjects();
     }
+
+     /// <summary>
+    /// Az elmentett adatok alapján létrehozza az objektumokat és beállítja azok állapotát.
+    /// </summary>
 
     public void AddObjectsFromSave()
     {
@@ -67,6 +91,10 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Beállítja a játékparamétereket az elmentett adatok alapján.
+    /// </summary>
+
     public void SetGameParameters()
     {
         int playerLives = XMLSave.instance.saveData.lives;
@@ -78,6 +106,10 @@ public class SaveSystem : MonoBehaviour
         bool isEndless = XMLSave.instance.saveData.isEndless;
         GameLogic.instance.isEndless = isEndless;
     }
+
+    /// <summary>
+    /// Az adatstruktúrába menti az obketumok állapotát.
+    /// </summary>
 
     public void SaveObjects()
     {
@@ -93,6 +125,11 @@ public class SaveSystem : MonoBehaviour
             XMLSave.instance.saveData.transforms.Add(transformData);
         }
     }
+
+    /// <summary>
+    /// Elmenti a játékparamétereket az adatstruktúrába.
+    /// </summary>
+    /// <param name="scoreGoal">A játék célja (pl. pontszám).</param>
 
     public void SaveGameParameters(int scoreGoal)
     {
