@@ -1,9 +1,9 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Az EnemyController oszt·ly felelıs az ellensÈgek mozg·s·nak Ès viselkedÈsÈnek vezÈrlÈsÈÈrt.
+/// Az EnemyController oszt√°ly felel≈ës az ellens√©gek mozg√°s√°nak √©s viselked√©s√©nek vez√©rl√©s√©√©rt.
 /// </summary>
 public class EnemyController : MonoBehaviour
 {
@@ -26,7 +26,7 @@ public class EnemyController : MonoBehaviour
     public GameObject enemyModel;
 
     /// <summary>
-    /// Az ellensÈg mozg·s·nak lehetsÈges ir·nyai.
+    /// Az ellens√©g mozg√°s√°nak lehets√©ges ir√°nyai.
     /// </summary>
     [HideInInspector]
     public enum Direction
@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour
     }
 
     /// <summary>
-    /// Az objektum lÈtrehoz·sakor inicializ·lja az ellensÈget.
+    /// Az objektum l√©trehoz√°sakor inicializ√°lja az ellens√©get.
     /// </summary>
     private void Start()
     {
@@ -49,7 +49,7 @@ public class EnemyController : MonoBehaviour
     }
 
     /// <summary>
-    /// A frissÌtÈs minden frame-ben ellenırzi az ir·nyt Ès a mozg·st.
+    /// A friss√≠t√©s minden frame-ben ellen√µrzi az ir√°nyt √©s a mozg√°st.
     /// </summary>
     private void Update()
     {
@@ -61,7 +61,7 @@ public class EnemyController : MonoBehaviour
     }
 
     /// <summary>
-    /// Az ellensÈg mozg·s ir·ny·t ellenırzi.
+    /// Az ellens√©g mozg√°s ir√°ny√°t ellen√µrzi.
     /// </summary>
     public void CheckDir()
     {
@@ -90,7 +90,7 @@ public class EnemyController : MonoBehaviour
     }
 
     // <summary>
-    /// Az ellensÈg mozg·s ir·ny·nak v·ltoztat·sa.
+    /// Az ellens√©g mozg√°s ir√°ny√°nak v√°ltoztat√°sa.
     /// </summary>
     public void ChangeDir()
     {
@@ -160,7 +160,7 @@ public class EnemyController : MonoBehaviour
     }
 
     /// <summary>
-    /// Az ¸tkˆzÈst az adott ir·nyban ellenırzi egy-egy raycast segÌtsÈgÈvel.
+    /// Az √ºtk√∂z√©st az adott ir√°nyban ellen√µrzi egy-egy raycast seg√≠ts√©g√©vel.
     /// </summary>
     public bool CheckCollision(Direction checkDirection)
     {
@@ -192,7 +192,7 @@ public class EnemyController : MonoBehaviour
     }
 
     /// <summary>
-    /// Az ellensÈg modelljÈnek ir·ny·t v·ltoztatja.
+    /// Az ellens√©g modellj√©nek ir√°ny√°t v√°ltoztatja.
     /// </summary>
     public void ChangeModelDirection()
     {
@@ -214,7 +214,7 @@ public class EnemyController : MonoBehaviour
     }
 
     /// <summary>
-    /// Az ellensÈg elpusztÌt·sa.
+    /// Az ellens√©g elpuszt√≠t√°sa.
     /// </summary>
     public void KillEnemy()
     {
@@ -227,7 +227,7 @@ public class EnemyController : MonoBehaviour
     }
 
     /// <summary>
-    /// EsemÈnykezelı, amely akkor hÌvÛdik meg, ha az ellensÈg bele¸tkˆzik m·s objektumba.
+    /// Esem√©nykezel√µ, amely akkor h√≠v√≥dik meg, ha az ellens√©g bele√ºtk√∂zik m√°s objektumba.
     /// </summary>
     private void OnTriggerEnter(Collider collision)
     {
@@ -250,14 +250,14 @@ public class EnemyController : MonoBehaviour
     }
 
     /// <summary>
-    /// V·rakozik egy adott idıt (megadva m·sodpercben), majd vÈgrehajtja a sz¸ksÈges m˚veleteket.
+    /// V√°rakozik egy adott id√µt (megadva m√°sodpercben), majd v√©grehajtja a sz√ºks√©ges m√ªveleteket.
     /// </summary>
-    /// <param name="waitTime">A v·rakoz·si idı m·sodpercben.</param>
+    /// <param name="waitTime">A v√°rakoz√°si id√µ m√°sodpercben.</param>
     private IEnumerator WaitForNodeTrigger(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
 
-        // Ha nem teszt mÛdban vagyunk, akkor vÈgrehajtja a modell ir·ny·nak v·ltoztat·s·t.
+        // Ha nem teszt m√≥dban vagyunk, akkor v√©grehajtja a modell ir√°ny√°nak v√°ltoztat√°s√°t.
         if (isTest == false)
         {
             ChangeModelDirection();

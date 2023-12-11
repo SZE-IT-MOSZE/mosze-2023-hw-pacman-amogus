@@ -1,13 +1,13 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 
 /// <summary>
-/// A játék logikáját irányító osztály.
+/// A jÃ¡tÃ©k logikÃ¡jÃ¡t irÃ¡nyÃ­tÃ³ osztÃ¡ly.
 /// </summary>
 public class GameLogic : MonoBehaviour
 {
     /// <summary>
-    /// Az aktuális példány azonosítása az osztályból.
+    /// Az aktuÃ¡lis pÃ©ldÃ¡ny azonosÃ­tÃ¡sa az osztÃ¡lybÃ³l.
     /// </summary>
     public static GameLogic instance;
 
@@ -32,8 +32,8 @@ public class GameLogic : MonoBehaviour
     public bool isTest = true;
 
     /// <summary>
-    /// A játék indításakor meghívott függvény.
-    /// Ellenõrzi, hogy a játék teszt módban van-e, és ha nem, akkor betölti a mentést.
+    /// A jÃ¡tÃ©k indÃ­tÃ¡sakor meghÃ­vott fÃ¼ggvÃ©ny.
+    /// EllenÃµrzi, hogy a jÃ¡tÃ©k teszt mÃ³dban van-e, Ã©s ha nem, akkor betÃ¶lti a mentÃ©st.
     /// </summary>
     private void Start()
     {
@@ -44,8 +44,8 @@ public class GameLogic : MonoBehaviour
     }
 
     /// <summary>
-    /// Minden frame-ben frissíti a játék állapotát, ha nem teszt módban van.
-    /// Ellenõrzi, hogy szükséges-e új elemeket létrehozni, és ellenõrzi a játék módját, hogy végtelen módban van-e, a játék végsõ teljesülési feltételét.
+    /// Minden frame-ben frissÃ­ti a jÃ¡tÃ©k Ã¡llapotÃ¡t, ha nem teszt mÃ³dban van.
+    /// EllenÅ‘rzi, hogy szÃ¼ksÃ©ges-e Ãºj elemeket lÃ©trehozni, Ã©s ellenÃµrzi a jÃ¡tÃ©k mÃ³djÃ¡t, hogy vÃ©gtelen mÃ³dban van-e, a jÃ¡tÃ©k vÃ©gsÃµ teljesÃ¼lÃ©si feltÃ©telÃ©t.
     /// </summary>
     private void Update()
     {
@@ -78,7 +78,7 @@ public class GameLogic : MonoBehaviour
     }
 
     /// <summary>
-    /// A játék pontszámának beállítása.
+    /// A jÃ¡tÃ©k pontszÃ¡mÃ¡nak beÃ¡llÃ­tÃ¡sa.
     /// </summary>
     public void SetScore(int ScoreToAdd)
     {
@@ -91,7 +91,7 @@ public class GameLogic : MonoBehaviour
     }
 
     /// <summary>
-    /// A játékos életének csökkentése.
+    /// A jÃ¡tÃ©kos Ã©letÃ©nek csÃ¶kkentÃ©se.
     /// </summary>
     public void SetLives()
     {
@@ -103,7 +103,7 @@ public class GameLogic : MonoBehaviour
     }
 
     /// <summary>
-    /// A játékos objektum elpusztítása.
+    /// A jÃ¡tÃ©kos objektum elpusztÃ­tÃ¡sa.
     /// </summary>
     public void KillPlayer()
     {
@@ -128,7 +128,7 @@ public class GameLogic : MonoBehaviour
     }
 
     /// <summary>
-    /// Game Over gameEvent indítása.
+    /// Game Over gameEvent indÃ­tÃ¡sa.
     /// </summary>
     public void GameOver()
     {
@@ -150,7 +150,7 @@ public class GameLogic : MonoBehaviour
     }
 
     /// <summary>
-    /// Játékos újrat elhelyezése a pályán egy kis várakozás után.
+    /// JÃ¡tÃ©kos Ãºjrat elhelyezÃ©se a pÃ¡lyÃ¡n egy kis vÃ¡rakozÃ¡s utÃ¡n.
     /// </summary>
     private IEnumerator RespawnPlayer()
     {
@@ -163,7 +163,7 @@ public class GameLogic : MonoBehaviour
     }
 
     /// <summary>
-    /// Várakoztatás kis ideig a játék végéig.
+    /// VÃ¡rakoztatÃ¡s kis ideig a jÃ¡tÃ©k vÃ©gÃ©ig.
     /// </summary>
     public IEnumerator WaitForEndGame()
     {

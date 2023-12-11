@@ -1,12 +1,12 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 
 /// <summary>
-/// A gomb logik·j·t kezelı oszt·ly.
+/// A gomb logik√°j√°t kezel≈ë oszt√°ly.
 /// </summary>
 public class ButtonLogic : MonoBehaviour
 {
     /// <summary>
-    /// Az elÈrhetı gombtÌpusok felsorol·sa.
+    /// Az el√©rhet√µ gombt√≠pusok felsorol√°sa.
     /// </summary>
     public enum ButtonType
     {
@@ -18,31 +18,31 @@ public class ButtonLogic : MonoBehaviour
     }
 
     /// <summary>
-    /// A gomb tÌpusa.
+    /// A gomb t√≠pusa.
     /// </summary>
     public ButtonType type;
 
     /// <summary>
-    /// MentÈsi rendszer be·llÌt·sai.
+    /// Ment√©si rendszer be√°ll√≠t√°sai.
     /// </summary>
     [Header("Save System settings")]
     public int buttonIndex;
 
     /// <summary>
-    /// Jelenetv·lt·s be·llÌt·sai.
+    /// Jelenetv√°lt√°s be√°ll√≠t√°sai.
     /// </summary>
     [Header("Scene Change settings")]
     public string sceneName;
 
     /// <summary>
-    /// NehÈzsÈgi be·llÌt·sok.
+    /// Neh√©zs√©gi be√°ll√≠t√°sok.
     /// </summary>
     [Header("Difficulty settings")]
     public int scoreGoal;
     public string difficulty;
 
     /// <summary>
-    /// A gomb lenyom·sakor vÈgrehajtandÛ m˚veletek.
+    /// A gomb lenyom√°sakor v√©grehajtand√≥ m√ªveletek.
     /// </summary>
     public void ButtonPressed()
     {

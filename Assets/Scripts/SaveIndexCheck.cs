@@ -1,12 +1,12 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 /// <summary>
-/// A mentés indexét ellenõrzõ osztály.
+/// A mentÃ©s indexÃ©t ellenÅ‘rzÅ‘ osztÃ¡ly.
 /// </summary>
 public class SaveIndexCheck : MonoBehaviour
 {
     /// <summary>
-    /// Az osztály példányát tároló statikus referencia.
+    /// Az osztÃ¡ly pÃ©ldÃ¡nyÃ¡t tÃ¡rolÃ³ statikus referencia.
     /// </summary>
     public static SaveIndexCheck instance;
 
@@ -16,8 +16,8 @@ public class SaveIndexCheck : MonoBehaviour
     }
 
     /// <summary>
-    /// Az osztály példányának beállítása.
-    /// Ellenõrzi, hogy van-e már példány létrehozva, és ha nincs, akkor létrehozza.
+    /// Az osztÃ¡ly pÃ©ldÃ¡nyÃ¡nak beÃ¡llÃ­tÃ¡sa.
+    /// EllenÃµrzi, hogy van-e mÃ¡r pÃ©ldÃ¡ny lÃ©trehozva, Ã©s ha nincs, akkor lÃ©trehozza.
     /// </summary>
     public void SetupInstance()
     {
@@ -34,7 +34,7 @@ public class SaveIndexCheck : MonoBehaviour
     }
 
     /// <summary>
-    /// A mentés indexét tároló változó.
+    /// A mentÃ©s indexÃ©t tÃ¡rolÃ³ vÃ¡ltozÃ³.
     /// </summary>
     public int saveIndex;
 }

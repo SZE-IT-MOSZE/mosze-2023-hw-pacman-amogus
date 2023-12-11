@@ -1,13 +1,13 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using UnityEngine;
 
 /// <summary>
-/// A j·tÈkos ir·nyÌt·s·t kezelı oszt·ly.
+/// A j√°t√©kos ir√°ny√≠t√°s√°t kezel≈ë oszt√°ly.
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
     /// <summary>
-    /// Az oszt·ly statikus pÈld·ny·t t·rolÛ referencia.
+    /// Az oszt√°ly statikus p√©ld√°ny√°t t√°rol√≥ referencia.
     /// </summary>
     public static PlayerController instance;
 
@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// A j·tÈkos modellje.
+    /// A j√°t√©kos modellje.
     /// </summary>
     public GameObject playerModel;
 
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
     public bool isTest = true;
 
     /// <summary>
-    /// Az Update f¸ggvÈny, amely a j·tÈkos mozg·s·t kezeli.
+    /// Az Update f√ºggv√©ny, amely a j√°t√©kos mozg√°s√°t kezeli.
     /// </summary>
     private void Update()
     {
@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Be·llÌtja a sebezhetetlensÈget.
+    /// Be√°ll√≠tja a sebezhetetlens√©get.
     /// </summary>
     public void Setinvulnerability()
     {
@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Be·llÌtja a sebessÈg fokoz·s·t.
+    /// Be√°ll√≠tja a sebess√©g fokoz√°s√°t.
     /// </summary>
     public void SetSpeedUp()
     {
@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Be·llÌtja a PowerUp-ot.
+    /// Be√°ll√≠tja a PowerUp-ot.
     /// </summary>
     public void SetPowerUp()
     {
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// IdızÌtı a sebezhetetlensÈghez.
+    /// Id√µz√≠t√µ a sebezhetetlens√©ghez.
     /// </summary>
     public IEnumerator InvulnerabilityTimer()
     {
@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// IdızÌtı a PowerUp-hoz.
+    /// Id√µz√≠t√µ a PowerUp-hoz.
     /// </summary>
     public IEnumerator PowerUpTimer(string powerUpType, float powerUpTime)
     {
