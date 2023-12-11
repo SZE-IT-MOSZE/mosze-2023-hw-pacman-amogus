@@ -2,7 +2,7 @@
 
 ---
 
-## Amogus játék (TBD)
+## Project Amogus
 
 ### A játék rövid leírása
 
@@ -55,3 +55,5 @@ Futtathatásukhoz 2023.3.10f verziószámú Unity Editor szükséges.
 - *Vati Albert*
 - *Boda Péter*
 - *Pósza Levente*
+  
+- *Külön köszönettel jó barátunknak, István Kándárli-nak a háttérzeneként felhasznált dal felénekléséért!*
