@@ -1,8 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// A SpawnManager osztály felelős az objektumok létrehozásáért és elhelyezéséért a játékban.
+/// </summary>
+
 public class SpawnManager : MonoBehaviour
 {
+
+    /// <summary>
+    /// A SpawnManager egyetlen példánya (singleton).
+    /// </summary>
     public static SpawnManager instance;
 
     private void Awake()
@@ -41,6 +49,9 @@ public class SpawnManager : MonoBehaviour
     [Header("Test Settings")]
     public bool isTest = true;
 
+    /// <summary>
+    ///Az aktuális gyermek objektumból lekéri az elhelyezkedése poyíciókat.
+    /// </summary>
     public void GetSpawnPositions()
     {
         children.Clear();
@@ -68,6 +79,10 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Felvehető objektumokat spawn-ol a megfelelő pozíciókon.
+    /// </summary>
+
     public void SpawnPickups()
     {
         GetSpawnPositions();
@@ -86,6 +101,10 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Ellenségeket spawn-ol a megfelelő pozíciókon.
+    /// </summary>
+
     public void SpawnEnemies()
     {
         GetSpawnPositions();
@@ -103,6 +122,10 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Node objektumokat spawn-ol a megfelelő pozíciókon.
+    /// </summary>
+
     public void SpawnNodes()
     {
         GetSpawnPositions();
@@ -116,6 +139,10 @@ public class SpawnManager : MonoBehaviour
             Instantiate(nodeGameObject, spawnPosition, Quaternion.identity);
         }
     }
+
+    /// <summary>
+    /// Csapda objektumokat spawn-ol a megfelelő pozíciókon.
+    /// </summary>
 
     public void SpawnTraps()
     {
@@ -134,6 +161,10 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Lekéri a játékos elhelyezési pozícióját.
+    /// </summary>
+
     public void GetPlayerSpawnPos()
     {
         Vector3 spawnPosition = new Vector3(0, 0, 0);
@@ -145,6 +176,10 @@ public class SpawnManager : MonoBehaviour
 
         SpawnPlayer(spawnPosition);
     }
+    /// <summary>
+    /// Le spawn-olja a játékost a megadott pozícióban.
+    /// </summary>
+    /// <param name="playerPos">A játékos pozíciója.</param>
 
     public void SpawnPlayer(Vector3 playerPos)
     {
