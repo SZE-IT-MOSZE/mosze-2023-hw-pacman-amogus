@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
@@ -6,23 +6,38 @@ using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// A UI-logikát kezelő osztály a játék különböző jelenetei között.
+/// </summary>
 public class UILogic : MonoBehaviour
 {
+    /// <summary>
+    /// A UILogic osztály singletonja.
+    /// </summary>
     public static UILogic instance;
 
+    /// <summary>
+    /// A singleton inicializálása.
+    /// </summary>
     private void Awake()
     {
         instance = this;
     }
 
+    /// <summary>
+    /// Felhasználói felület típusait reprezentáló felsorolás.
+    /// </summary>
     public enum UItype
     {
         Menu,
         Generator,
         Play
     }
-    public UItype type;
+    public UItype type; /// Az aktuális felület típusa.
 
+    /// <summary>
+    /// A Menu típusú felhasználói felület objektumai.
+    /// </summary>
     [Header("Menu Scene settings")]
     public GameObject deleteButton;
     public GameObject mainScreen;
@@ -31,6 +46,9 @@ public class UILogic : MonoBehaviour
     public Toggle sfxToggle;
     public Toggle bgmToggle;
 
+    /// <summary>
+    /// A Generator típusú felhasználói felület objektumai.
+    /// </summary>
     [Header("Generator Scene settings")]
     public GameObject saveButtons;
     public TMP_Text saveButtonText;
@@ -39,6 +57,9 @@ public class UILogic : MonoBehaviour
     public TMP_Text difficultyText;
     public Toggle infiniteToggle;
 
+    /// <summary>
+    /// A Play típusú felhasználói felület objektumai.
+    /// </summary>
     [Header("Play Scene settings")]
     public GameObject pauseMenu;
     public GameObject gameOverText;
@@ -52,6 +73,9 @@ public class UILogic : MonoBehaviour
     [HideInInspector]
     public bool audioPlayed;
 
+    /// <summary>
+    /// A script kezdeti értékeinek beállítása.
+    /// </summary>
     private void Start()
     {
         Time.timeScale = 1f;
@@ -75,6 +99,9 @@ public class UILogic : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Folyamatos frissítés kereteiben történő vizsgálatok és műveletek.
+    /// </summary>
     private void Update()
     {
         if (type == UItype.Play)
@@ -94,11 +121,18 @@ public class UILogic : MonoBehaviour
 
     //////MENU UI//////
 
+    /// <summary>
+    /// Megadott jelenet betöltése.
+    /// </summary>
+    /// <param name="sceneName">A betöltendő jelenet neve.</param>
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
 
+    /// <summary>
+    /// Törlés gomb megjelenítése vagy elrejtése az elmentett fájloknak megfelelően.
+    /// </summary>
     public void ShowDeleteButton()
     {
         List<int> saves = new List<int>();
@@ -121,6 +155,9 @@ public class UILogic : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Elmentett fájlok törlése, majd az állapotnak megfelelő gombok megjelenítése vagy elrejtése.
+    /// </summary>
     public void DeleteSaves()
     {
         for (int i = 0; i < loadList.Count; i++)
@@ -135,6 +172,9 @@ public class UILogic : MonoBehaviour
         ShowLoadButtons();
     }
 
+    /// <summary>
+    /// Beállítások képernyő megjelenítése vagy elrejtése.
+    /// </summary>
     public void ShowOptions()
     {
         if (optionsScreen.activeInHierarchy == false)
@@ -149,6 +189,9 @@ public class UILogic : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Hangbeállítások változtatása.
+    /// </summary>
     public void AudioOptionChange()
     {
         if (sfxToggle.isOn)
@@ -170,6 +213,9 @@ public class UILogic : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Kilépés a játékból.
+    /// </summary>
     public void QuitGame()
     {
         Application.Quit();
@@ -177,11 +223,17 @@ public class UILogic : MonoBehaviour
 
     //////GENERATOR UI//////
 
+    /// <summary>
+    /// A labirintus újragenerálása.
+    /// </summary>
     public void RegenerateMaze()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    /// <summary>
+    /// Betöltés gombok megjelenítése az elmentett állapotok alapján.
+    /// </summary>
     public void ShowLoadButtons()
     {
         for (int i = 0; i < loadList.Count; i++)
@@ -197,6 +249,9 @@ public class UILogic : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Mentés gombok megjelenítése vagy elrejtése a gomb aktuális állapotától függően.
+    /// </summary>
     public void ShowSaveButtons()
     {
         if (saveButtons.activeSelf)
@@ -213,6 +268,10 @@ public class UILogic : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Elmentett játékállás mentése a megadott mentési index helyére.
+    /// </summary>
+    /// <param name="saveIndex">A mentés indexe.</param>
     public void SaveSlot(int saveIndex)
     {
         XMLSave.instance.Save(saveIndex);
@@ -221,6 +280,10 @@ public class UILogic : MonoBehaviour
         ShowLoadButtons();
     }
 
+    /// <summary>
+    /// Adott indexű mentés betöltése.
+    /// </summary>
+    /// <param name="loadIndex">A betöltendő mentés indexe.</param>
     public void LoadSlot(int loadIndex)
     {
         SaveIndexCheck.instance.saveIndex = loadIndex;
@@ -228,11 +291,18 @@ public class UILogic : MonoBehaviour
         SceneManager.LoadScene("Cutscene");
     }
 
+    /// <summary>
+    /// Nehézségi szint szövegének beállítása.
+    /// </summary>
+    /// <param name="difficulty">A beállítandó nehézségi szint szövege.</param>
     public void SetDifficultyText(string difficulty)
     {
         difficultyText.text = difficulty;
     }
 
+    /// <summary>
+    /// Végtelen mód beállítása a kapcsoló állapotától függően.
+    /// </summary>
     public void SetInfinite()
     {
         if (infiniteToggle.isOn)
@@ -247,16 +317,28 @@ public class UILogic : MonoBehaviour
 
     //////PLAY UI//////
 
+    /// <summary>
+    /// Életek számának beállítása és megjelenítése.
+    /// </summary>
+    /// <param name="lives">Beállítandó életek száma.</param>
     public void SetLivesText(int lives)
     {
         livesText.text = "Lives: " + lives.ToString();
     }
 
+    /// <summary>
+    /// Pontszám beállítása és megjelenítése.
+    /// </summary>
+    /// <param name="score">Beállítandó pontszám.</param>
     public void SetScoreText(int score)
     {
         scoreText.text = "Score: " + score.ToString();
     }
 
+    /// <summary>
+    /// Végeredmény képernyő megjelenítése (győzelem/vereség).
+    /// </summary>
+    /// <param name="isWin">Igaz érték esetén győzelem, hamis érték esetén vereség.</param>
     public void ShowEndScreen(bool isWin)
     {
         if (isWin == true)
@@ -275,6 +357,9 @@ public class UILogic : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sebezhetetlenség szövegének megjelenítése vagy elrejtése.
+    /// </summary>
     public void ShowInvulnerabilityText()
     {
         if (PlayerController.instance.invulnerable == true)
@@ -287,6 +372,9 @@ public class UILogic : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Szünetmenü megjelenítése vagy elrejtése a játék szüneteltetése mellett.
+    /// </summary>
     public void ShowPauseMenu()
     {
         switch (isPaused)

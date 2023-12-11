@@ -1,26 +1,41 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Csapdák logikáját kezelő osztály.
+/// </summary>
 public class TrapLogic : MonoBehaviour
 {
+    /// <summary>
+    /// Csapda típusokat definiáló felsorolás.
+    /// </summary>
     public enum trapType
     {
-        Mine,
-        BearTrap
+        Mine,       // Akna
+        BearTrap    // Medvecsapda
     }
-    public trapType type;
+    public trapType type; // Az aktuális csapda típusa
 
+    /// <summary>
+    /// A BearTrap típusú csapda objektumai.
+    /// </summary>
     [Header("Bear Trap Settings")]
     public GameObject bearTrapModel;
     public float bearTrapTime;
     private float moveSpeedBase;
     public Animator bearTrapAnimator;
 
+    /// <summary>
+    /// A Mine típusú csapda objektumai.
+    /// </summary>
     [Header("Mine Settings")]
     public GameObject mineModel;
     public GameObject mineRange;
     public float mineArmTime;
 
+    /// <summary>
+    /// Csapda inicializálása a játék elején.
+    /// </summary>
     public void Start()
     {
         switch (Random.Range(0, 2))
@@ -41,6 +56,9 @@ public class TrapLogic : MonoBehaviour
         moveSpeedBase = PlayerController.instance.moveSpeed;
     }
 
+    /// <summary>
+    /// A playerrel történő ütközés eseményének kezelése.
+    /// </summary>
     public void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "Player")
@@ -61,6 +79,9 @@ public class TrapLogic : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// A Mine aktiválási ideje.
+    /// </summary>
     public IEnumerator MineArm()
     {
         yield return new WaitForSeconds(mineArmTime);
@@ -68,6 +89,9 @@ public class TrapLogic : MonoBehaviour
         mineRange.SetActive(true);
     }
 
+    /// <summary>
+    /// Medvecsapda időzített funkciója.
+    /// </summary>
     public IEnumerator BearTrapTimer()
     {
         yield return new WaitForSeconds(bearTrapTime);
