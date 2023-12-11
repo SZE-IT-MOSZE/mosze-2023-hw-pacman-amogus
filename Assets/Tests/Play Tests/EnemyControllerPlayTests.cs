@@ -3,9 +3,14 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
 
+/// <summary>
+/// Az EnemyController játékbeli tesztjeihez tartozó osztály.
+/// </summary>
 public class EnemyControllerPlayTests
 {
-
+    /// <summary>
+    /// Az ellenfelek megölését tesztelõ függvény.
+    /// </summary>
     [UnityTest]
     public IEnumerator KillEnemyTest()
     {
@@ -33,6 +38,9 @@ public class EnemyControllerPlayTests
         Assert.IsFalse(enemyexists);
     }
 
+    /// <summary>
+    /// Az ellenfelek mozgását tesztelõ függvény.
+    /// </summary>
     [UnityTest]
     public IEnumerator EnemyMoveTest()
     {

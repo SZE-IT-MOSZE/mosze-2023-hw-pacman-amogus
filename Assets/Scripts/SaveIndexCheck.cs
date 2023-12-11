@@ -1,7 +1,13 @@
 using UnityEngine;
 
+/// <summary>
+/// A mentés indexét ellenõrzõ osztály.
+/// </summary>
 public class SaveIndexCheck : MonoBehaviour
 {
+    /// <summary>
+    /// Az osztály példányát tároló statikus referencia.
+    /// </summary>
     public static SaveIndexCheck instance;
 
     private void Awake()
@@ -9,6 +15,10 @@ public class SaveIndexCheck : MonoBehaviour
         SetupInstance();
     }
 
+    /// <summary>
+    /// Az osztály példányának beállítása.
+    /// Ellenõrzi, hogy van-e már példány létrehozva, és ha nincs, akkor létrehozza.
+    /// </summary>
     public void SetupInstance()
     {
         if (instance == null)
@@ -23,5 +33,8 @@ public class SaveIndexCheck : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// A mentés indexét tároló változó.
+    /// </summary>
     public int saveIndex;
 }

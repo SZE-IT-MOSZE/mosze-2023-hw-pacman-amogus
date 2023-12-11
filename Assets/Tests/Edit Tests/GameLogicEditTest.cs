@@ -1,7 +1,13 @@
 using NUnit.Framework;
 
+/// <summary>
+/// A GameLogic osztály tesztjeihez tartozó osztály.
+/// </summary>
 public class GameLogicEditTest
 {
+    /// <summary>
+    /// A pontszámváltozást tesztelõ függvény.
+    /// </summary>
     [Test]
     public void ScoreChangeTest()
     {
@@ -15,6 +21,10 @@ public class GameLogicEditTest
 
         Assert.AreNotEqual(initialscore, resultscore);
     }
+
+    /// <summary>
+    /// Az életek változását tesztelõ függvény.
+    /// </summary>
     [Test]
     public void LifeChangeTest()
     {
@@ -29,6 +39,10 @@ public class GameLogicEditTest
         //Assert
         Assert.AreNotEqual(initialLives, resultLives);
     }
+
+    /// <summary>
+    /// A játék végét tesztelõ függvény.
+    /// </summary>
     [Test]
     public void GameOverTest()
     {

@@ -1,8 +1,14 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// A játékos irányítását kezelõ osztály.
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
+    /// <summary>
+    /// Az osztály statikus példányát tároló referencia.
+    /// </summary>
     public static PlayerController instance;
 
     private void Awake()
@@ -10,6 +16,9 @@ public class PlayerController : MonoBehaviour
         instance = this;
     }
 
+    /// <summary>
+    /// A játékos modellje.
+    /// </summary>
     public GameObject playerModel;
 
     [Header("Movement settings")]
@@ -33,6 +42,9 @@ public class PlayerController : MonoBehaviour
     [Header("Test settings")]
     public bool isTest = true;
 
+    /// <summary>
+    /// Az Update függvény, amely a játékos mozgását kezeli.
+    /// </summary>
     private void Update()
     {
         Vector3 movement = Vector3.zero;
@@ -50,6 +62,9 @@ public class PlayerController : MonoBehaviour
         playerRb.velocity = movement * moveSpeed;
     }
 
+    /// <summary>
+    /// Beállítja a sebezhetetlenséget.
+    /// </summary>
     public void Setinvulnerability()
     {
         switch (invulnerable)
@@ -66,6 +81,9 @@ public class PlayerController : MonoBehaviour
         UILogic.instance.ShowInvulnerabilityText();
     }
 
+    /// <summary>
+    /// Beállítja a sebesség fokozását.
+    /// </summary>
     public void SetSpeedUp()
     {
         switch (speedUp)
@@ -83,12 +101,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Beállítja a PowerUp-ot.
+    /// </summary>
     public void SetPowerUp()
     {
         powerUp = true;
         StartCoroutine(PowerUpTimer("PowerUp", powerUpTime));
     }
 
+    /// <summary>
+    /// Idõzítõ a sebezhetetlenséghez.
+    /// </summary>
     public IEnumerator InvulnerabilityTimer()
     {
         yield return new WaitForSeconds(invulnerabilityTime);
@@ -97,6 +121,9 @@ public class PlayerController : MonoBehaviour
         Setinvulnerability();
     }
 
+    /// <summary>
+    /// Idõzítõ a PowerUp-hoz.
+    /// </summary>
     public IEnumerator PowerUpTimer(string powerUpType, float powerUpTime)
     {
         yield return new WaitForSeconds(powerUpTime);
