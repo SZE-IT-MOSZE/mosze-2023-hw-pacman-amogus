@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Az EnemyController osztály felelõs az ellenségek mozgásának és viselkedésének vezérléséért.
+/// </summary>
 public class EnemyController : MonoBehaviour
 {
     public float moveSpeed = 5f;
@@ -22,6 +25,9 @@ public class EnemyController : MonoBehaviour
     public Rigidbody enemyRb;
     public GameObject enemyModel;
 
+    /// <summary>
+    /// Az ellenség mozgásának lehetséges irányai.
+    /// </summary>
     [HideInInspector]
     public enum Direction
     {
@@ -31,6 +37,9 @@ public class EnemyController : MonoBehaviour
         Right
     }
 
+    /// <summary>
+    /// Az objektum létrehozásakor inicializálja az ellenséget.
+    /// </summary>
     private void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
@@ -39,6 +48,9 @@ public class EnemyController : MonoBehaviour
         firstSpawn = false;
     }
 
+    /// <summary>
+    /// A frissítés minden frame-ben ellenõrzi az irányt és a mozgást.
+    /// </summary>
     private void Update()
     {
         CheckDir();
@@ -48,6 +60,9 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Az ellenség mozgás irányát ellenõrzi.
+    /// </summary>
     public void CheckDir()
     {
         if (!CheckCollision(direction))
@@ -74,6 +89,9 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    // <summary>
+    /// Az ellenség mozgás irányának változtatása.
+    /// </summary>
     public void ChangeDir()
     {
         dirChange = true;
@@ -141,6 +159,9 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Az ütközést az adott irányban ellenõrzi egy-egy raycast segítségével.
+    /// </summary>
     public bool CheckCollision(Direction checkDirection)
     {
         Vector3 rayDirection = Vector3.zero;
@@ -170,6 +191,9 @@ public class EnemyController : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// Az ellenség modelljének irányát változtatja.
+    /// </summary>
     public void ChangeModelDirection()
     {
         switch (direction)
@@ -189,6 +213,9 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Az ellenség elpusztítása.
+    /// </summary>
     public void KillEnemy()
     {
         if (isTest == false)
@@ -199,6 +226,9 @@ public class EnemyController : MonoBehaviour
         Destroy(gameObject);
     }
 
+    /// <summary>
+    /// Eseménykezelõ, amely akkor hívódik meg, ha az ellenség beleütközik más objektumba.
+    /// </summary>
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "Node")
@@ -219,10 +249,15 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Várakozik egy adott idõt (megadva másodpercben), majd végrehajtja a szükséges mûveleteket.
+    /// </summary>
+    /// <param name="waitTime">A várakozási idõ másodpercben.</param>
     private IEnumerator WaitForNodeTrigger(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
 
+        // Ha nem teszt módban vagyunk, akkor végrehajtja a modell irányának változtatását.
         if (isTest == false)
         {
             ChangeModelDirection();

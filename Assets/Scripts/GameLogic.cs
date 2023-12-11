@@ -1,8 +1,14 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// A játék logikáját irányító osztály.
+/// </summary>
 public class GameLogic : MonoBehaviour
 {
+    /// <summary>
+    /// Az aktuális példány azonosítása az osztályból.
+    /// </summary>
     public static GameLogic instance;
 
     private void Awake()
@@ -25,6 +31,10 @@ public class GameLogic : MonoBehaviour
     [Header("Test settings")]
     public bool isTest = true;
 
+    /// <summary>
+    /// A játék indításakor meghívott függvény.
+    /// Ellenõrzi, hogy a játék teszt módban van-e, és ha nem, akkor betölti a mentést.
+    /// </summary>
     private void Start()
     {
         if (isTest == false)
@@ -33,6 +43,10 @@ public class GameLogic : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Minden frame-ben frissíti a játék állapotát, ha nem teszt módban van.
+    /// Ellenõrzi, hogy szükséges-e új elemeket létrehozni, és ellenõrzi a játék módját, hogy végtelen módban van-e, a játék végsõ teljesülési feltételét.
+    /// </summary>
     private void Update()
     {
         if (isTest == false)
@@ -63,6 +77,9 @@ public class GameLogic : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// A játék pontszámának beállítása.
+    /// </summary>
     public void SetScore(int ScoreToAdd)
     {
         score += ScoreToAdd;
@@ -73,6 +90,9 @@ public class GameLogic : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// A játékos életének csökkentése.
+    /// </summary>
     public void SetLives()
     {
         lives--;
@@ -82,6 +102,9 @@ public class GameLogic : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// A játékos objektum elpusztítása.
+    /// </summary>
     public void KillPlayer()
     {
         Destroy(GameObject.FindWithTag("Player"));
@@ -104,6 +127,9 @@ public class GameLogic : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Game Over gameEvent indítása.
+    /// </summary>
     public void GameOver()
     {
         gameOver = true;
@@ -123,6 +149,9 @@ public class GameLogic : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Játékos újrat elhelyezése a pályán egy kis várakozás után.
+    /// </summary>
     private IEnumerator RespawnPlayer()
     {
         yield return new WaitForSeconds(1f);
@@ -133,6 +162,9 @@ public class GameLogic : MonoBehaviour
         PlayerController.instance.Setinvulnerability();
     }
 
+    /// <summary>
+    /// Várakoztatás kis ideig a játék végéig.
+    /// </summary>
     public IEnumerator WaitForEndGame()
     {
         yield return new WaitForSeconds(3f);

@@ -3,9 +3,14 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
 
+/// <summary>
+/// A GameLogic játékbeli tesztjeihez tartozó osztály.
+/// </summary>
 public class GameLogicPlayTest
 {
-
+    /// <summary>
+    /// A pontszámot tesztelő függvény.
+    /// </summary>
     [UnityTest]
     public IEnumerator GameLogicPlayScore()
     {
@@ -24,6 +29,9 @@ public class GameLogicPlayTest
         Assert.AreNotEqual(intialscore, resultscore);
     }
 
+    /// <summary>
+    /// A játékos halálát tesztelő függvény.
+    /// </summary>
     [UnityTest]
     public IEnumerator GameLogicPlayerKilled()
     {
