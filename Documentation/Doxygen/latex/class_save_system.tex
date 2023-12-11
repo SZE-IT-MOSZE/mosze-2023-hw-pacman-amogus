@@ -1,0 +1,96 @@
+\doxysection{Save\+System Class Reference}
+\hypertarget{class_save_system}{}\label{class_save_system}\index{SaveSystem@{SaveSystem}}
+
+
+A \doxylink{class_save_system}{Save\+System} osztály felelős a játékállapot mentéséért és betöltéséért.  
+
+
+Inheritance diagram for Save\+System\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_save_system}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_save_system_ab8be49a0b22b74cab5ab03c52455eabb}\label{class_save_system_ab8be49a0b22b74cab5ab03c52455eabb} 
+enum \mbox{\hyperlink{class_save_system_ab8be49a0b22b74cab5ab03c52455eabb}{scene\+Type}} \{ {\bfseries Generator}
+, {\bfseries Play}
+ \}
+\begin{DoxyCompactList}\small\item\em Felsorolás a jelenet típusával kapcsolatos beállításokhoz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_save_system_aa863c94f6489ccc52cd66b975f19e0bf}\label{class_save_system_aa863c94f6489ccc52cd66b975f19e0bf} 
+void {\bfseries On\+Load} ()
+\begin{DoxyCompactList}\small\item\em Metódus amely az adatok betöltését végzi a jelenet típusától függően. \end{DoxyCompactList}\item 
+\Hypertarget{class_save_system_a2c53f0a1d6c026a0abe4f7c2e264379b}\label{class_save_system_a2c53f0a1d6c026a0abe4f7c2e264379b} 
+void {\bfseries Add\+Objects\+From\+Generator} ()
+\begin{DoxyCompactList}\small\item\em Gyermek objektum hozzáadása az objektumok listájához mentés előtt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_save_system_a0cc934f3479db46e6bf675ef7dde8b1f}{Add\+Objects\+From\+Save}} ()
+\item 
+\Hypertarget{class_save_system_a4e3b8ef4e85f541bb98802d01067c9bc}\label{class_save_system_a4e3b8ef4e85f541bb98802d01067c9bc} 
+void {\bfseries Set\+Game\+Parameters} ()
+\begin{DoxyCompactList}\small\item\em Beállítja a játékparamétereket az elmentett adatok alapján. \end{DoxyCompactList}\item 
+\Hypertarget{class_save_system_ac6336121d475b2b27472fb87f51a451a}\label{class_save_system_ac6336121d475b2b27472fb87f51a451a} 
+void {\bfseries Save\+Objects} ()
+\begin{DoxyCompactList}\small\item\em Az adatstruktúrába menti az obketumok állapotát. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_save_system_a8290076d643f2c7ae1926dd7f59d840a}{Save\+Game\+Parameters}} (int score\+Goal)
+\begin{DoxyCompactList}\small\item\em Elmenti a játékparamétereket az adatstruktúrába. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_save_system_abfff57f0a3d186327131209277630657}\label{class_save_system_abfff57f0a3d186327131209277630657} 
+\mbox{\hyperlink{class_save_system_ab8be49a0b22b74cab5ab03c52455eabb}{scene\+Type}} {\bfseries type}
+\item 
+\Hypertarget{class_save_system_aa483892fff70ada2e152a473b8c2ac44}\label{class_save_system_aa483892fff70ada2e152a473b8c2ac44} 
+Game\+Object {\bfseries lab\+Piece}
+\item 
+\Hypertarget{class_save_system_ad305e012bb35ab1d50c34644d7f2a67f}\label{class_save_system_ad305e012bb35ab1d50c34644d7f2a67f} 
+List$<$ Transform $>$ {\bfseries objects}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_save_system_a91727f7e8388736ef325e35c42a06967}\label{class_save_system_a91727f7e8388736ef325e35c42a06967} 
+static \mbox{\hyperlink{class_save_system}{Save\+System}} {\bfseries instance}
+\begin{DoxyCompactList}\small\item\em A \doxylink{class_save_system}{Save\+System} egyetlen példánya (Singleton). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_save_system_a903ca6b7fc83955511e2f84ea6b4b0ef}\label{class_save_system_a903ca6b7fc83955511e2f84ea6b4b0ef} 
+void {\bfseries Awake} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{class_save_system}{Save\+System} osztály felelős a játékállapot mentéséért és betöltéséért. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_save_system_a0cc934f3479db46e6bf675ef7dde8b1f}\label{class_save_system_a0cc934f3479db46e6bf675ef7dde8b1f} 
+\index{SaveSystem@{SaveSystem}!AddObjectsFromSave@{AddObjectsFromSave}}
+\index{AddObjectsFromSave@{AddObjectsFromSave}!SaveSystem@{SaveSystem}}
+\doxysubsubsection{\texorpdfstring{AddObjectsFromSave()}{AddObjectsFromSave()}}
+{\footnotesize\ttfamily void Save\+System.\+Add\+Objects\+From\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Az elmentett adatok alapján létrehozza az objektumokat és beállítja azok állapotát. \Hypertarget{class_save_system_a8290076d643f2c7ae1926dd7f59d840a}\label{class_save_system_a8290076d643f2c7ae1926dd7f59d840a} 
+\index{SaveSystem@{SaveSystem}!SaveGameParameters@{SaveGameParameters}}
+\index{SaveGameParameters@{SaveGameParameters}!SaveSystem@{SaveSystem}}
+\doxysubsubsection{\texorpdfstring{SaveGameParameters()}{SaveGameParameters()}}
+{\footnotesize\ttfamily void Save\+System.\+Save\+Game\+Parameters (\begin{DoxyParamCaption}\item[{int}]{score\+Goal }\end{DoxyParamCaption})}
+
+
+
+Elmenti a játékparamétereket az adatstruktúrába. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em score\+Goal} & A játék célja (pl. pontszám).\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Levi/\+Documents/\+Git\+Hub/mosze-\/2023-\/hw-\/pacman-\/amogus/\+Assets/\+Scripts/Save\+System.\+cs\end{DoxyCompactItemize}

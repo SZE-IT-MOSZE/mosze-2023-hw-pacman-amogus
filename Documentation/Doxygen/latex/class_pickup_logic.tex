@@ -1,0 +1,68 @@
+\doxysection{Pickup\+Logic Class Reference}
+\hypertarget{class_pickup_logic}{}\label{class_pickup_logic}\index{PickupLogic@{PickupLogic}}
+
+
+A felvehető tárgyak logikáját kezelő osztály.  
+
+
+Inheritance diagram for Pickup\+Logic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_pickup_logic}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_pickup_logic_a0ccc67aa73df889b555a88bafb212384}\label{class_pickup_logic_a0ccc67aa73df889b555a88bafb212384} 
+enum \mbox{\hyperlink{class_pickup_logic_a0ccc67aa73df889b555a88bafb212384}{Pickup\+Type}} \{ {\bfseries Basic}
+, {\bfseries Speed\+Up}
+, {\bfseries Power\+Up}
+ \}
+\begin{DoxyCompactList}\small\item\em Felvehető tárgy típusokat definiáló felsorolás. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_pickup_logic_ae949d567a20f6ab8feabd28210fda93f}\label{class_pickup_logic_ae949d567a20f6ab8feabd28210fda93f} 
+void {\bfseries Destroy\+Pickup} ()
+\begin{DoxyCompactList}\small\item\em A felvehető tárgy megsemmisítése. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pickup_logic_a5b6c72dee1086604ae7133cfa2cce619}{On\+Trigger\+Enter}} (Collider collision)
+\begin{DoxyCompactList}\small\item\em A playerrel történő ütközés eseményének kezelése. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_pickup_logic_a001a2e29c1df45b8d6e60081f301d697}\label{class_pickup_logic_a001a2e29c1df45b8d6e60081f301d697} 
+\mbox{\hyperlink{class_pickup_logic_a0ccc67aa73df889b555a88bafb212384}{Pickup\+Type}} {\bfseries type}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_pickup_logic_a968e4fe85e79243a36e7c662eb921c6a}\label{class_pickup_logic_a968e4fe85e79243a36e7c662eb921c6a} 
+int {\bfseries score\+Value}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A felvehető tárgyak logikáját kezelő osztály. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_pickup_logic_a5b6c72dee1086604ae7133cfa2cce619}\label{class_pickup_logic_a5b6c72dee1086604ae7133cfa2cce619} 
+\index{PickupLogic@{PickupLogic}!OnTriggerEnter@{OnTriggerEnter}}
+\index{OnTriggerEnter@{OnTriggerEnter}!PickupLogic@{PickupLogic}}
+\doxysubsubsection{\texorpdfstring{OnTriggerEnter()}{OnTriggerEnter()}}
+{\footnotesize\ttfamily void Pickup\+Logic.\+On\+Trigger\+Enter (\begin{DoxyParamCaption}\item[{Collider}]{collision }\end{DoxyParamCaption})}
+
+
+
+A playerrel történő ütközés eseményének kezelése. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em collision} & Az ütközés collider-\/objektuma\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Levi/\+Documents/\+Git\+Hub/mosze-\/2023-\/hw-\/pacman-\/amogus/\+Assets/\+Scripts/Pickup\+Logic.\+cs\end{DoxyCompactItemize}

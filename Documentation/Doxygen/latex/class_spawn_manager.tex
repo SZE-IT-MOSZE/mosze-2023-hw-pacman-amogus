@@ -1,0 +1,125 @@
+\doxysection{Spawn\+Manager Class Reference}
+\hypertarget{class_spawn_manager}{}\label{class_spawn_manager}\index{SpawnManager@{SpawnManager}}
+
+
+A \doxylink{class_spawn_manager}{Spawn\+Manager} osztály felelős az objektumok létrehozásáért és elhelyezéséért a játékban.  
+
+
+Inheritance diagram for Spawn\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_spawn_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_spawn_manager_a589721f53bb554a327777140b0672cac}\label{class_spawn_manager_a589721f53bb554a327777140b0672cac} 
+void {\bfseries Get\+Spawn\+Positions} ()
+\begin{DoxyCompactList}\small\item\em Az aktuális gyermek objektumból lekéri az elhelyezkedése poyíciókat. \end{DoxyCompactList}\item 
+\Hypertarget{class_spawn_manager_a85078d89a2cb6f45db1a07502c9b0673}\label{class_spawn_manager_a85078d89a2cb6f45db1a07502c9b0673} 
+void {\bfseries Spawn\+Pickups} ()
+\begin{DoxyCompactList}\small\item\em Felvehető objektumokat spawn-\/ol a megfelelő pozíciókon. \end{DoxyCompactList}\item 
+\Hypertarget{class_spawn_manager_a626c5b62c03147351eb9a87a3576f384}\label{class_spawn_manager_a626c5b62c03147351eb9a87a3576f384} 
+void {\bfseries Spawn\+Enemies} ()
+\begin{DoxyCompactList}\small\item\em Ellenségeket spawn-\/ol a megfelelő pozíciókon. \end{DoxyCompactList}\item 
+\Hypertarget{class_spawn_manager_a34d134546b9fac3e2ec282369a2c24fe}\label{class_spawn_manager_a34d134546b9fac3e2ec282369a2c24fe} 
+void {\bfseries Spawn\+Nodes} ()
+\begin{DoxyCompactList}\small\item\em Node objektumokat spawn-\/ol a megfelelő pozíciókon. \end{DoxyCompactList}\item 
+\Hypertarget{class_spawn_manager_aacc22b5858348897c2f33791bb9253a0}\label{class_spawn_manager_aacc22b5858348897c2f33791bb9253a0} 
+void {\bfseries Spawn\+Traps} ()
+\begin{DoxyCompactList}\small\item\em Csapda objektumokat spawn-\/ol a megfelelő pozíciókon. \end{DoxyCompactList}\item 
+\Hypertarget{class_spawn_manager_ac966c50a37f0808e52b26f453fbcaf5d}\label{class_spawn_manager_ac966c50a37f0808e52b26f453fbcaf5d} 
+void {\bfseries Get\+Player\+Spawn\+Pos} ()
+\begin{DoxyCompactList}\small\item\em Lekéri a játékos elhelyezési pozícióját. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_spawn_manager_a6cefa0d1d1203d762f097a7176134cc5}{Spawn\+Player}} (Vector3 player\+Pos)
+\begin{DoxyCompactList}\small\item\em Le spawn-\/olja a játékost a megadott pozícióban. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_spawn_manager_adc6173ad876b53035439e811a29c3379}\label{class_spawn_manager_adc6173ad876b53035439e811a29c3379} 
+\mbox{\hyperlink{class_player_controller}{Player\+Controller}} {\bfseries player}
+\item 
+\Hypertarget{class_spawn_manager_a7c32fad9069a19500561d8a43bfb534d}\label{class_spawn_manager_a7c32fad9069a19500561d8a43bfb534d} 
+\mbox{\hyperlink{class_enemy_controller}{Enemy\+Controller}} {\bfseries enemy}
+\item 
+\Hypertarget{class_spawn_manager_a6502b0cd74c07db918f8e9cdec6e80e5}\label{class_spawn_manager_a6502b0cd74c07db918f8e9cdec6e80e5} 
+List$<$ Game\+Object $>$ {\bfseries pickups} = new List$<$Game\+Object$>$()
+\item 
+\Hypertarget{class_spawn_manager_afefdf33afb2b0ade250771325e41194f}\label{class_spawn_manager_afefdf33afb2b0ade250771325e41194f} 
+Game\+Object {\bfseries pickup\+Game\+Object}
+\item 
+\Hypertarget{class_spawn_manager_afcd07ea6479018fe4bf6b0e43b2b1f15}\label{class_spawn_manager_afcd07ea6479018fe4bf6b0e43b2b1f15} 
+Game\+Object {\bfseries trap\+Game\+Object}
+\item 
+\Hypertarget{class_spawn_manager_af8dbfdd3a28fb4f0cdc84581ec4a26de}\label{class_spawn_manager_af8dbfdd3a28fb4f0cdc84581ec4a26de} 
+int {\bfseries trap\+Number}
+\item 
+\Hypertarget{class_spawn_manager_a99a7b823a0e8b5d8b222f2593786a5bd}\label{class_spawn_manager_a99a7b823a0e8b5d8b222f2593786a5bd} 
+int {\bfseries spawned\+Traps}
+\item 
+\Hypertarget{class_spawn_manager_ae6cd888c63fea5c38abb000e23098407}\label{class_spawn_manager_ae6cd888c63fea5c38abb000e23098407} 
+Game\+Object {\bfseries node\+Game\+Object}
+\item 
+\Hypertarget{class_spawn_manager_a95b88ec05cb6cb4dd237adea098529ad}\label{class_spawn_manager_a95b88ec05cb6cb4dd237adea098529ad} 
+bool {\bfseries player\+Spawned} = false
+\item 
+\Hypertarget{class_spawn_manager_a17144148f772f02bbcdb5360a793a904}\label{class_spawn_manager_a17144148f772f02bbcdb5360a793a904} 
+int {\bfseries spawn\+Number}
+\item 
+\Hypertarget{class_spawn_manager_af00cf1d4eb2981746b516ee84094716e}\label{class_spawn_manager_af00cf1d4eb2981746b516ee84094716e} 
+int {\bfseries spawned\+Pickups}
+\item 
+\Hypertarget{class_spawn_manager_a2806ed301f45a402356bc5391eaeeb04}\label{class_spawn_manager_a2806ed301f45a402356bc5391eaeeb04} 
+int {\bfseries enemy\+Number}
+\item 
+\Hypertarget{class_spawn_manager_aab91fac2fc063264fb468fff1626fa6d}\label{class_spawn_manager_aab91fac2fc063264fb468fff1626fa6d} 
+int {\bfseries spawned\+Enemies}
+\item 
+\Hypertarget{class_spawn_manager_a6e3bfc05b564195710c39130997bd92a}\label{class_spawn_manager_a6e3bfc05b564195710c39130997bd92a} 
+List$<$ Transform $>$ {\bfseries children} = new List$<$Transform$>$()
+\item 
+\Hypertarget{class_spawn_manager_a390441e07e6b5fe3da9d200b071b6375}\label{class_spawn_manager_a390441e07e6b5fe3da9d200b071b6375} 
+List$<$ Transform $>$ {\bfseries spawn\+Points} = new List$<$Transform$>$()
+\item 
+\Hypertarget{class_spawn_manager_ab9dd3d9d97319aed3335581ee98b9a0c}\label{class_spawn_manager_ab9dd3d9d97319aed3335581ee98b9a0c} 
+bool {\bfseries is\+Test} = true
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_spawn_manager_a74124e9f62ed326e7bc0efbee523dffd}\label{class_spawn_manager_a74124e9f62ed326e7bc0efbee523dffd} 
+static \mbox{\hyperlink{class_spawn_manager}{Spawn\+Manager}} {\bfseries instance}
+\begin{DoxyCompactList}\small\item\em A \doxylink{class_spawn_manager}{Spawn\+Manager} egyetlen példánya (singleton). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_spawn_manager_a23b37ebce79af5d4666327ac57a29b7d}\label{class_spawn_manager_a23b37ebce79af5d4666327ac57a29b7d} 
+void {\bfseries Awake} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{class_spawn_manager}{Spawn\+Manager} osztály felelős az objektumok létrehozásáért és elhelyezéséért a játékban. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_spawn_manager_a6cefa0d1d1203d762f097a7176134cc5}\label{class_spawn_manager_a6cefa0d1d1203d762f097a7176134cc5} 
+\index{SpawnManager@{SpawnManager}!SpawnPlayer@{SpawnPlayer}}
+\index{SpawnPlayer@{SpawnPlayer}!SpawnManager@{SpawnManager}}
+\doxysubsubsection{\texorpdfstring{SpawnPlayer()}{SpawnPlayer()}}
+{\footnotesize\ttfamily void Spawn\+Manager.\+Spawn\+Player (\begin{DoxyParamCaption}\item[{Vector3}]{player\+Pos }\end{DoxyParamCaption})}
+
+
+
+Le spawn-\/olja a játékost a megadott pozícióban. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Pos} & A játékos pozíciója.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Levi/\+Documents/\+Git\+Hub/mosze-\/2023-\/hw-\/pacman-\/amogus/\+Assets/\+Scripts/Spawn\+Manager.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,99 @@
+\doxysection{SFXLogic Class Reference}
+\hypertarget{class_s_f_x_logic}{}\label{class_s_f_x_logic}\index{SFXLogic@{SFXLogic}}
+
+
+A hangeffektek és háttérzene kezeléséért felelős osztály.  
+
+
+Inheritance diagram for SFXLogic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_s_f_x_logic}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_s_f_x_logic_aa191e7bbbb7d6d9338ff042e2419a6b6}{Play\+SFX}} (int sfx\+To\+Play)
+\begin{DoxyCompactList}\small\item\em Hanghatás lejátszása a megadott indexen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_f_x_logic_a7e20090a9f4922344355945fdbf24261}{Play\+SFXPitched}} (int sfx\+To\+Play)
+\begin{DoxyCompactList}\small\item\em Hanghatás lejátszása véletlenszerű hangmagassággal a megadott indexen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_s_f_x_logic_a8442a92843d35492cea2fc2a3bc25e3e}{Play\+BGM}} (bool paused)
+\begin{DoxyCompactList}\small\item\em Háttérzene lejátszása vagy szüneteltetése a megadott állapot alapján. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_s_f_x_logic_a1e5ce25e835a838c15a78f378845dd48}\label{class_s_f_x_logic_a1e5ce25e835a838c15a78f378845dd48} 
+Audio\+Source\mbox{[}$\,$\mbox{]} {\bfseries sound\+Effects}
+\item 
+\Hypertarget{class_s_f_x_logic_a1a8ba528714a4a34ef6adb241e648f8b}\label{class_s_f_x_logic_a1a8ba528714a4a34ef6adb241e648f8b} 
+Audio\+Source {\bfseries BGM}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_s_f_x_logic_a33d21c8e18363546bed917e80021627a}\label{class_s_f_x_logic_a33d21c8e18363546bed917e80021627a} 
+static \mbox{\hyperlink{class_s_f_x_logic}{SFXLogic}} {\bfseries instance}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_s_f_x_logic_ae8ed9366d299518a7af3f3fe9028a72e}\label{class_s_f_x_logic_ae8ed9366d299518a7af3f3fe9028a72e} 
+void {\bfseries Awake} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A hangeffektek és háttérzene kezeléséért felelős osztály. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_s_f_x_logic_a8442a92843d35492cea2fc2a3bc25e3e}\label{class_s_f_x_logic_a8442a92843d35492cea2fc2a3bc25e3e} 
+\index{SFXLogic@{SFXLogic}!PlayBGM@{PlayBGM}}
+\index{PlayBGM@{PlayBGM}!SFXLogic@{SFXLogic}}
+\doxysubsubsection{\texorpdfstring{PlayBGM()}{PlayBGM()}}
+{\footnotesize\ttfamily void SFXLogic.\+Play\+BGM (\begin{DoxyParamCaption}\item[{bool}]{paused }\end{DoxyParamCaption})}
+
+
+
+Háttérzene lejátszása vagy szüneteltetése a megadott állapot alapján. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paused} & Szüneteltetés vagy lejátszás állapota\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_s_f_x_logic_aa191e7bbbb7d6d9338ff042e2419a6b6}\label{class_s_f_x_logic_aa191e7bbbb7d6d9338ff042e2419a6b6} 
+\index{SFXLogic@{SFXLogic}!PlaySFX@{PlaySFX}}
+\index{PlaySFX@{PlaySFX}!SFXLogic@{SFXLogic}}
+\doxysubsubsection{\texorpdfstring{PlaySFX()}{PlaySFX()}}
+{\footnotesize\ttfamily void SFXLogic.\+Play\+SFX (\begin{DoxyParamCaption}\item[{int}]{sfx\+To\+Play }\end{DoxyParamCaption})}
+
+
+
+Hanghatás lejátszása a megadott indexen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sfx\+To\+Play} & Lejátszandó hanghatás indexe\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_s_f_x_logic_a7e20090a9f4922344355945fdbf24261}\label{class_s_f_x_logic_a7e20090a9f4922344355945fdbf24261} 
+\index{SFXLogic@{SFXLogic}!PlaySFXPitched@{PlaySFXPitched}}
+\index{PlaySFXPitched@{PlaySFXPitched}!SFXLogic@{SFXLogic}}
+\doxysubsubsection{\texorpdfstring{PlaySFXPitched()}{PlaySFXPitched()}}
+{\footnotesize\ttfamily void SFXLogic.\+Play\+SFXPitched (\begin{DoxyParamCaption}\item[{int}]{sfx\+To\+Play }\end{DoxyParamCaption})}
+
+
+
+Hanghatás lejátszása véletlenszerű hangmagassággal a megadott indexen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sfx\+To\+Play} & Lejátszandó hanghatás indexe\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Levi/\+Documents/\+Git\+Hub/mosze-\/2023-\/hw-\/pacman-\/amogus/\+Assets/\+Scripts/SFXLogic.\+cs\end{DoxyCompactItemize}

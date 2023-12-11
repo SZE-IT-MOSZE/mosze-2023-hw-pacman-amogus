@@ -1,0 +1,117 @@
+\doxysection{Tutorial\+Logic Class Reference}
+\hypertarget{class_tutorial_logic}{}\label{class_tutorial_logic}\index{TutorialLogic@{TutorialLogic}}
+
+
+Tutorial logikát kezelő osztály.  
+
+
+Inheritance diagram for Tutorial\+Logic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_tutorial_logic}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_tutorial_logic_a9a1b81b14eb19b412b5d2b98d26ce118}\label{class_tutorial_logic_a9a1b81b14eb19b412b5d2b98d26ce118} 
+enum \mbox{\hyperlink{class_tutorial_logic_a9a1b81b14eb19b412b5d2b98d26ce118}{Tutorial\+Type}} \{ {\bfseries Menu}
+, {\bfseries Generation}
+, {\bfseries Tutorial\+Check}
+ \}
+\begin{DoxyCompactList}\small\item\em Tutorial típusokat definiáló felsorolás. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_tutorial_logic_a2c7f0c0ea809d794b863f3e53b637084}\label{class_tutorial_logic_a2c7f0c0ea809d794b863f3e53b637084} 
+IEnumerator {\bfseries First\+Stage} ()
+\begin{DoxyCompactList}\small\item\em Az első tutorial szakasz folyamata. \end{DoxyCompactList}\item 
+\Hypertarget{class_tutorial_logic_a66d64930112af31c5e9e400a1864076a}\label{class_tutorial_logic_a66d64930112af31c5e9e400a1864076a} 
+IEnumerator {\bfseries Tutorial\+Wait} (Game\+Object text\+To\+Show, Game\+Object text\+To\+Hide, Game\+Object button\+To\+Show, float wait\+Time)
+\begin{DoxyCompactList}\small\item\em Várakozás a tutorial során. \end{DoxyCompactList}\item 
+\Hypertarget{class_tutorial_logic_a3296c010152757d7d7577ff92c03e507}\label{class_tutorial_logic_a3296c010152757d7d7577ff92c03e507} 
+void {\bfseries Stage\+Two} ()
+\begin{DoxyCompactList}\small\item\em A második tutorial szakasz elindítása. \end{DoxyCompactList}\item 
+\Hypertarget{class_tutorial_logic_ab3678ca87bd2bf69387995d43844e296}\label{class_tutorial_logic_ab3678ca87bd2bf69387995d43844e296} 
+IEnumerator {\bfseries Second\+Stage} ()
+\begin{DoxyCompactList}\small\item\em A második szakasz tutorial folyamata. \end{DoxyCompactList}\item 
+\Hypertarget{class_tutorial_logic_aae8ced5f0789e466956cc1b6906c7c0a}\label{class_tutorial_logic_aae8ced5f0789e466956cc1b6906c7c0a} 
+void {\bfseries Generation\+Stage1} ()
+\begin{DoxyCompactList}\small\item\em A generációs tutorial szakasz első lépése. \end{DoxyCompactList}\item 
+\Hypertarget{class_tutorial_logic_a657d516c00deb3884f2be1180de8169d}\label{class_tutorial_logic_a657d516c00deb3884f2be1180de8169d} 
+void {\bfseries Generation\+Stage2} ()
+\begin{DoxyCompactList}\small\item\em A generációs tutorial szakasz második lépése. \end{DoxyCompactList}\item 
+\Hypertarget{class_tutorial_logic_a7c6c0c305a2d4438cba66f068c1f605b}\label{class_tutorial_logic_a7c6c0c305a2d4438cba66f068c1f605b} 
+void {\bfseries Create\+File} ()
+\begin{DoxyCompactList}\small\item\em Új tutorial\+Check fájl létrehozása. \end{DoxyCompactList}\item 
+\Hypertarget{class_tutorial_logic_ab54f8e619494066d0499733337d07510}\label{class_tutorial_logic_ab54f8e619494066d0499733337d07510} 
+void {\bfseries Skip\+Tutorial} ()
+\begin{DoxyCompactList}\small\item\em Tutorial átugrása és a menü betöltése. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_tutorial_logic_ac09d433c975ceb2bbbc06a618c848e5c}\label{class_tutorial_logic_ac09d433c975ceb2bbbc06a618c848e5c} 
+\mbox{\hyperlink{class_tutorial_logic_a9a1b81b14eb19b412b5d2b98d26ce118}{Tutorial\+Type}} {\bfseries type}
+\item 
+\Hypertarget{class_tutorial_logic_a33b79509c81c54e4b7de8335f56890d5}\label{class_tutorial_logic_a33b79509c81c54e4b7de8335f56890d5} 
+Game\+Object {\bfseries first\+Stage}
+\begin{DoxyCompactList}\small\item\em Az első, második és generációs szakaszhoz kapcsolódó játékobjektumok. \end{DoxyCompactList}\item 
+\Hypertarget{class_tutorial_logic_a3c22b21dc350c9fe2a6ef0ffde99e949}\label{class_tutorial_logic_a3c22b21dc350c9fe2a6ef0ffde99e949} 
+Game\+Object {\bfseries second\+Stage}
+\item 
+\Hypertarget{class_tutorial_logic_a29d9fe2bdbbd85f7781475393fce4314}\label{class_tutorial_logic_a29d9fe2bdbbd85f7781475393fce4314} 
+Game\+Object {\bfseries generation\+Stage}
+\item 
+\Hypertarget{class_tutorial_logic_af228491142f71174e33d8c13fd9166e7}\label{class_tutorial_logic_af228491142f71174e33d8c13fd9166e7} 
+Game\+Object {\bfseries text\+Box1\+\_\+1}
+\begin{DoxyCompactList}\small\item\em Az első szakasz szövegdobozaihoz tartozó játékobjektumok. \end{DoxyCompactList}\item 
+\Hypertarget{class_tutorial_logic_a1b631df2a7aed4489d20a02733245ab4}\label{class_tutorial_logic_a1b631df2a7aed4489d20a02733245ab4} 
+Game\+Object {\bfseries text\+Box1\+\_\+2}
+\item 
+\Hypertarget{class_tutorial_logic_a96344a883d983b988a94a2542548c657}\label{class_tutorial_logic_a96344a883d983b988a94a2542548c657} 
+Game\+Object {\bfseries text\+Box1\+\_\+3}
+\item 
+\Hypertarget{class_tutorial_logic_a853c6119e537c305c1c9f05f3ed34eaf}\label{class_tutorial_logic_a853c6119e537c305c1c9f05f3ed34eaf} 
+Game\+Object {\bfseries text\+Box2\+\_\+1}
+\begin{DoxyCompactList}\small\item\em A második szakasz szövegdobozaihoz tartozó játékobjektumok. \end{DoxyCompactList}\item 
+\Hypertarget{class_tutorial_logic_aaf404667a8b3c7b336d1e5cfe3b2fb9f}\label{class_tutorial_logic_aaf404667a8b3c7b336d1e5cfe3b2fb9f} 
+Game\+Object {\bfseries text\+Box2\+\_\+2}
+\item 
+\Hypertarget{class_tutorial_logic_af9806d936ac243d4007499034356919a}\label{class_tutorial_logic_af9806d936ac243d4007499034356919a} 
+Game\+Object {\bfseries gen\+Text\+Box1}
+\begin{DoxyCompactList}\small\item\em A generációs szakasz szövegdobozaihoz tartozó játékobjektumok. \end{DoxyCompactList}\item 
+\Hypertarget{class_tutorial_logic_a0f1553119c602480fbaf2ce73c24d5a7}\label{class_tutorial_logic_a0f1553119c602480fbaf2ce73c24d5a7} 
+Game\+Object {\bfseries gen\+Text\+Box2}
+\item 
+\Hypertarget{class_tutorial_logic_a6b31905628ef9810b98a6abad78fbaba}\label{class_tutorial_logic_a6b31905628ef9810b98a6abad78fbaba} 
+Game\+Object {\bfseries gen\+Text\+Box3}
+\item 
+\Hypertarget{class_tutorial_logic_ac4860098db1a738f95442e2e20db9d49}\label{class_tutorial_logic_ac4860098db1a738f95442e2e20db9d49} 
+Game\+Object {\bfseries skip\+Tutorial\+Button}
+\begin{DoxyCompactList}\small\item\em Az első szakaszhoz tartozó gombokhoz kapcsolódó játékobjektumok. \end{DoxyCompactList}\item 
+\Hypertarget{class_tutorial_logic_a7f8eac76e703ef3393b99f73c818cd21}\label{class_tutorial_logic_a7f8eac76e703ef3393b99f73c818cd21} 
+Game\+Object {\bfseries next\+Tutorial\+Button}
+\item 
+\Hypertarget{class_tutorial_logic_ab71137909048b9b084d4d455ad7f4586}\label{class_tutorial_logic_ab71137909048b9b084d4d455ad7f4586} 
+Button {\bfseries generate\+Button}
+\begin{DoxyCompactList}\small\item\em A második szakaszhoz tartozó gombhoz kapcsolódó játékobjektum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_tutorial_logic_a5e051b32874086fd25059f4d9f4746ba}\label{class_tutorial_logic_a5e051b32874086fd25059f4d9f4746ba} 
+void {\bfseries Start} ()
+\begin{DoxyCompactList}\small\item\em A játék indításakor végrehajtott műveletek a tutorial típusától függően. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_tutorial_logic_af1855671319c6faa94c52d167ebbfe63}\label{class_tutorial_logic_af1855671319c6faa94c52d167ebbfe63} 
+string {\bfseries file\+Path}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Tutorial logikát kezelő osztály. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Levi/\+Documents/\+Git\+Hub/mosze-\/2023-\/hw-\/pacman-\/amogus/\+Assets/\+Scripts/Tutorial\+Logic.\+cs\end{DoxyCompactItemize}
