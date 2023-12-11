@@ -554,6 +554,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   deleteButton: {fileID: 0}
+  mainScreen: {fileID: 0}
+  optionsScreen: {fileID: 0}
+  mainMixer: {fileID: 0}
+  sfxToggle: {fileID: 0}
+  bgmToggle: {fileID: 0}
   saveButtons: {fileID: 0}
   saveButtonText: {fileID: 0}
   loadButtons: {fileID: 0}
@@ -561,12 +566,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  difficultyText: {fileID: 0}
+  infiniteToggle: {fileID: 0}
   pauseMenu: {fileID: 0}
   gameOverText: {fileID: 0}
+  winScreen: {fileID: 0}
+  loseScreen: {fileID: 0}
   invulnerabilityText: {fileID: 0}
   livesText: {fileID: 0}
   scoreText: {fileID: 0}
   isPaused: 0
+  audioPlayed: 0
 --- !u!114 &183962347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -876,6 +886,8 @@ MonoBehaviour:
   type: 3
   buttonIndex: 0
   sceneName: GenerateTutorial
+  scoreGoal: 0
+  difficulty: 
 --- !u!1 &692908282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,9 +1174,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xDCdv\xF6z\xF6llek a ____ ! Amennyiben nem siker\xFClt elolvasni a projekt
-    github oldal\xE1n taglalt inform\xE1ci\xF3kat (az\xE9rt valljuk be annyira nem
-    neh\xE9z...) most v\xE9gigvezetlek a program m\u0171k\xF6d\xE9s\xE9n! "
+  m_text: "\xDCdv\xF6z\xF6llek a Project Amogusban! Amennyiben nem siker\xFClt elolvasni
+    a projekt github oldal\xE1n taglalt inform\xE1ci\xF3kat (az\xE9rt valljuk be
+    annyira nem neh\xE9z...) most v\xE9gigvezetlek a program m\u0171k\xF6d\xE9s\xE9n! "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
