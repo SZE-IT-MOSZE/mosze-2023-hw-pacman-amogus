@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TutorialCheck.unity
+    guid: 0a5bcdc722dd5a24ab49d59bf592315b
+  - enabled: 1
+    path: Assets/Scenes/MenuTutorial.unity
+    guid: 76d2d9049e9a20749a4a73337e9f5213
+  - enabled: 1
+    path: Assets/Scenes/GenerateTutorial.unity
+    guid: 9e96a6aa3eedc5a4e913256fff224b54
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 321d313628c43034dace2358549f8b24
+  - enabled: 1
+    path: Assets/Scenes/Generate.unity
+    guid: 6f5bd2236d24b3343a65b6bc486347c4
+  - enabled: 1
+    path: Assets/Scenes/Cutscene.unity
+    guid: 8ff5a36bd1586f341a5e0f51df099405
+  - enabled: 1
+    path: Assets/Scenes/Play.unity
+    guid: e2df792ca4132b54785f89a39fd60ee2
+  m_configObjects: {}

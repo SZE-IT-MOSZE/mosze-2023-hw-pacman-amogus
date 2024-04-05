@@ -1,0 +1,84 @@
+\doxysection{Game\+Logic Class Reference}
+\hypertarget{class_game_logic}{}\label{class_game_logic}\index{GameLogic@{GameLogic}}
+
+
+A játék logikáját irányító osztály.  
+
+
+Inheritance diagram for Game\+Logic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game_logic}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_game_logic_a7c66d805684beae0c9f20295ca32b5ea}\label{class_game_logic_a7c66d805684beae0c9f20295ca32b5ea} 
+void {\bfseries Set\+Score} (int Score\+To\+Add)
+\begin{DoxyCompactList}\small\item\em A játék pontszámának beállítása. \end{DoxyCompactList}\item 
+\Hypertarget{class_game_logic_a721b6d40ef008344b65423c320229ed1}\label{class_game_logic_a721b6d40ef008344b65423c320229ed1} 
+void {\bfseries Set\+Lives} ()
+\begin{DoxyCompactList}\small\item\em A játékos életének csökkentése. \end{DoxyCompactList}\item 
+\Hypertarget{class_game_logic_a6db6eb23a4a65eed2c156c842e5ef0df}\label{class_game_logic_a6db6eb23a4a65eed2c156c842e5ef0df} 
+void {\bfseries Kill\+Player} ()
+\begin{DoxyCompactList}\small\item\em A játékos objektum elpusztítása. \end{DoxyCompactList}\item 
+\Hypertarget{class_game_logic_ae133442375575a0b1f6d7781becb6ca2}\label{class_game_logic_ae133442375575a0b1f6d7781becb6ca2} 
+void {\bfseries Game\+Over} ()
+\begin{DoxyCompactList}\small\item\em Game Over game\+Event indítása. \end{DoxyCompactList}\item 
+\Hypertarget{class_game_logic_a935c480c4e6b05a57083112dbe6155e7}\label{class_game_logic_a935c480c4e6b05a57083112dbe6155e7} 
+IEnumerator {\bfseries Wait\+For\+End\+Game} ()
+\begin{DoxyCompactList}\small\item\em Várakoztatás kis ideig a játék végéig. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_game_logic_ad3ba04307bb88efb72e14ada0a4e1d05}\label{class_game_logic_ad3ba04307bb88efb72e14ada0a4e1d05} 
+int {\bfseries score\+Goal}
+\item 
+\Hypertarget{class_game_logic_a82a94dc50120f35e8027d60e74591f3a}\label{class_game_logic_a82a94dc50120f35e8027d60e74591f3a} 
+bool {\bfseries is\+Endless}
+\item 
+\Hypertarget{class_game_logic_a6767926a050039ecfda8531a4c218caa}\label{class_game_logic_a6767926a050039ecfda8531a4c218caa} 
+bool {\bfseries game\+Over}
+\item 
+\Hypertarget{class_game_logic_a92b9680233fe259e69a649bb6e2a4889}\label{class_game_logic_a92b9680233fe259e69a649bb6e2a4889} 
+bool {\bfseries is\+Win}
+\item 
+\Hypertarget{class_game_logic_aa8c1ed8ba4c4d43f7fbcda6fee0f40c6}\label{class_game_logic_aa8c1ed8ba4c4d43f7fbcda6fee0f40c6} 
+int {\bfseries score}
+\item 
+\Hypertarget{class_game_logic_aff4453e7f885de45bbef3dfb70d874a5}\label{class_game_logic_aff4453e7f885de45bbef3dfb70d874a5} 
+int {\bfseries lives}
+\item 
+\Hypertarget{class_game_logic_a6c724330403fe83cb7eea89f0676db96}\label{class_game_logic_a6c724330403fe83cb7eea89f0676db96} 
+bool {\bfseries is\+Test} = true
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_game_logic_a96f4021dff11e0f67601a58893aafdff}\label{class_game_logic_a96f4021dff11e0f67601a58893aafdff} 
+static \mbox{\hyperlink{class_game_logic}{Game\+Logic}} {\bfseries instance}
+\begin{DoxyCompactList}\small\item\em Az aktuális példány azonosítása az osztályból. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_game_logic_a2fd501368611e89c933725401db48a6b}\label{class_game_logic_a2fd501368611e89c933725401db48a6b} 
+void {\bfseries Awake} ()
+\item 
+\Hypertarget{class_game_logic_a5c8a5055ff4a003a255bcdf52cbd4d2c}\label{class_game_logic_a5c8a5055ff4a003a255bcdf52cbd4d2c} 
+void {\bfseries Start} ()
+\begin{DoxyCompactList}\small\item\em A játék indításakor meghívott függvény. Ellenõrzi, hogy a játék teszt módban van-\/e, és ha nem, akkor betölti a mentést. \end{DoxyCompactList}\item 
+\Hypertarget{class_game_logic_afc1960f0d415a35e84302f4eb1080ec1}\label{class_game_logic_afc1960f0d415a35e84302f4eb1080ec1} 
+void {\bfseries Update} ()
+\begin{DoxyCompactList}\small\item\em Minden frame-\/ben frissíti a játék állapotát, ha nem teszt módban van. Ellenőrzi, hogy szükséges-\/e új elemeket létrehozni, és ellenõrzi a játék módját, hogy végtelen módban van-\/e, a játék végsõ teljesülési feltételét. \end{DoxyCompactList}\item 
+\Hypertarget{class_game_logic_a370c9ab76a03284541097c6024d13b4c}\label{class_game_logic_a370c9ab76a03284541097c6024d13b4c} 
+IEnumerator {\bfseries Respawn\+Player} ()
+\begin{DoxyCompactList}\small\item\em Játékos újrat elhelyezése a pályán egy kis várakozás után. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A játék logikáját irányító osztály. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Levi/\+Documents/\+Git\+Hub/mosze-\/2023-\/hw-\/pacman-\/amogus/\+Assets/\+Scripts/Game\+Logic.\+cs\end{DoxyCompactItemize}

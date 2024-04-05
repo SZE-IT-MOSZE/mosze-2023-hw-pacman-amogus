@@ -1,0 +1,74 @@
+\doxysection{Trap\+Logic Class Reference}
+\hypertarget{class_trap_logic}{}\label{class_trap_logic}\index{TrapLogic@{TrapLogic}}
+
+
+Csapdák logikáját kezelő osztály.  
+
+
+Inheritance diagram for Trap\+Logic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_trap_logic}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_trap_logic_a709d8a8b7d100b0bc53b320dd6b25976}\label{class_trap_logic_a709d8a8b7d100b0bc53b320dd6b25976} 
+enum \mbox{\hyperlink{class_trap_logic_a709d8a8b7d100b0bc53b320dd6b25976}{trap\+Type}} \{ {\bfseries Mine}
+, {\bfseries Bear\+Trap}
+ \}
+\begin{DoxyCompactList}\small\item\em Csapda típusokat definiáló felsorolás. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_trap_logic_a6a02fff554e33a3ad49d5bf9426e9c22}\label{class_trap_logic_a6a02fff554e33a3ad49d5bf9426e9c22} 
+void {\bfseries Start} ()
+\begin{DoxyCompactList}\small\item\em Csapda inicializálása a játék elején. \end{DoxyCompactList}\item 
+\Hypertarget{class_trap_logic_a3d18650f6e6d13547458e83f8d6a54a8}\label{class_trap_logic_a3d18650f6e6d13547458e83f8d6a54a8} 
+void {\bfseries On\+Trigger\+Enter} (Collider collision)
+\begin{DoxyCompactList}\small\item\em A playerrel történő ütközés eseményének kezelése. \end{DoxyCompactList}\item 
+\Hypertarget{class_trap_logic_a2863a56021e04041319bc1b029455b2f}\label{class_trap_logic_a2863a56021e04041319bc1b029455b2f} 
+IEnumerator {\bfseries Mine\+Arm} ()
+\begin{DoxyCompactList}\small\item\em A Mine aktiválási ideje. \end{DoxyCompactList}\item 
+\Hypertarget{class_trap_logic_a7e65f42e26cb34b179a77e4fc4d737a0}\label{class_trap_logic_a7e65f42e26cb34b179a77e4fc4d737a0} 
+IEnumerator {\bfseries Bear\+Trap\+Timer} ()
+\begin{DoxyCompactList}\small\item\em Medvecsapda időzített funkciója. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_trap_logic_a3d80d8303271bf75f5ff4d63390048a5}\label{class_trap_logic_a3d80d8303271bf75f5ff4d63390048a5} 
+\mbox{\hyperlink{class_trap_logic_a709d8a8b7d100b0bc53b320dd6b25976}{trap\+Type}} {\bfseries type}
+\item 
+\Hypertarget{class_trap_logic_a417c1f3114dd2ca6e383b405bf43b25d}\label{class_trap_logic_a417c1f3114dd2ca6e383b405bf43b25d} 
+Game\+Object {\bfseries bear\+Trap\+Model}
+\begin{DoxyCompactList}\small\item\em A Bear\+Trap típusú csapda objektumai. \end{DoxyCompactList}\item 
+\Hypertarget{class_trap_logic_a38bff6621e3c7549f82dd3e36c28ee82}\label{class_trap_logic_a38bff6621e3c7549f82dd3e36c28ee82} 
+float {\bfseries bear\+Trap\+Time}
+\item 
+\Hypertarget{class_trap_logic_ad941e7363bf5c18b25d02523f91b8eb2}\label{class_trap_logic_ad941e7363bf5c18b25d02523f91b8eb2} 
+Animator {\bfseries bear\+Trap\+Animator}
+\item 
+\Hypertarget{class_trap_logic_a022cea03f8338eb62c650ae401d56599}\label{class_trap_logic_a022cea03f8338eb62c650ae401d56599} 
+Game\+Object {\bfseries mine\+Model}
+\begin{DoxyCompactList}\small\item\em A Mine típusú csapda objektumai. \end{DoxyCompactList}\item 
+\Hypertarget{class_trap_logic_ab6c10a8b8239a3d4c06613d3bc743b73}\label{class_trap_logic_ab6c10a8b8239a3d4c06613d3bc743b73} 
+Game\+Object {\bfseries mine\+Range}
+\item 
+\Hypertarget{class_trap_logic_a41465339670e0002f373efb2aec200b3}\label{class_trap_logic_a41465339670e0002f373efb2aec200b3} 
+float {\bfseries mine\+Arm\+Time}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_trap_logic_a54cb03566b6e06fd031ffe466bb8ecc0}\label{class_trap_logic_a54cb03566b6e06fd031ffe466bb8ecc0} 
+float {\bfseries move\+Speed\+Base}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Csapdák logikáját kezelő osztály. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Levi/\+Documents/\+Git\+Hub/mosze-\/2023-\/hw-\/pacman-\/amogus/\+Assets/\+Scripts/Trap\+Logic.\+cs\end{DoxyCompactItemize}

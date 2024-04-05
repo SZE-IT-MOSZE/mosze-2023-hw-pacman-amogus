@@ -1,0 +1,89 @@
+\doxysection{Mine\+Logic Class Reference}
+\hypertarget{class_mine_logic}{}\label{class_mine_logic}\index{MineLogic@{MineLogic}}
+
+
+Az osztály ami reprezentálja egy akna logikai tartalmát.  
+
+
+Inheritance diagram for Mine\+Logic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mine_logic}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_mine_logic_a1ed55019173ade68804610128521ab10}\label{class_mine_logic_a1ed55019173ade68804610128521ab10} 
+void {\bfseries Start} ()
+\begin{DoxyCompactList}\small\item\em Start metódus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mine_logic_ad857999b051fc9570157bf27ec4b4ed5}{On\+Trigger\+Enter}} (Collider collision)
+\begin{DoxyCompactList}\small\item\em On\+Trigger\+Enter akkor hívódik meg, amikor egy másik Collider belép a triggerbe. \end{DoxyCompactList}\item 
+IEnumerator \mbox{\hyperlink{class_mine_logic_afb174aecc6e43865d369f6f7351a3e54}{Explode\+Mine}} ()
+\begin{DoxyCompactList}\small\item\em Coroutine a bánya felrobbanásának kezelésére. \end{DoxyCompactList}\item 
+IEnumerator \mbox{\hyperlink{class_mine_logic_aadf71ab1362c3f0e5a4fb1940e21ffd6}{Kill\+Player\+Wait}} ()
+\begin{DoxyCompactList}\small\item\em Coroutine a várakozás kezelésére a játékos megölése előtt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_mine_logic_af0994b13ff6a789961a147a4c98fc0a6}\label{class_mine_logic_af0994b13ff6a789961a147a4c98fc0a6} 
+Game\+Object {\bfseries explosion\+Effect}
+\begin{DoxyCompactList}\small\item\em Referencia az akna robbanás effektus Game\+Object-\/re. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_mine_logic_abce46786abbdf5c42b722023133e672b}\label{class_mine_logic_abce46786abbdf5c42b722023133e672b} 
+bool {\bfseries exploded}
+\begin{DoxyCompactList}\small\item\em Flag, ami jelzi hogy az adott akna felrobbant-\/e. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Az osztály ami reprezentálja egy akna logikai tartalmát. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mine_logic_afb174aecc6e43865d369f6f7351a3e54}\label{class_mine_logic_afb174aecc6e43865d369f6f7351a3e54} 
+\index{MineLogic@{MineLogic}!ExplodeMine@{ExplodeMine}}
+\index{ExplodeMine@{ExplodeMine}!MineLogic@{MineLogic}}
+\doxysubsubsection{\texorpdfstring{ExplodeMine()}{ExplodeMine()}}
+{\footnotesize\ttfamily IEnumerator Mine\+Logic.\+Explode\+Mine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coroutine a bánya felrobbanásának kezelésére. 
+
+\begin{DoxyReturn}{Returns}
+Utasítás a robbanás effektus befejezésére való várakozáshoz.
+\end{DoxyReturn}
+\Hypertarget{class_mine_logic_aadf71ab1362c3f0e5a4fb1940e21ffd6}\label{class_mine_logic_aadf71ab1362c3f0e5a4fb1940e21ffd6} 
+\index{MineLogic@{MineLogic}!KillPlayerWait@{KillPlayerWait}}
+\index{KillPlayerWait@{KillPlayerWait}!MineLogic@{MineLogic}}
+\doxysubsubsection{\texorpdfstring{KillPlayerWait()}{KillPlayerWait()}}
+{\footnotesize\ttfamily IEnumerator Mine\+Logic.\+Kill\+Player\+Wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Coroutine a várakozás kezelésére a játékos megölése előtt. 
+
+\begin{DoxyReturn}{Returns}
+Utasítás a játékos életének frissítésére és a spawn manager csökkentése előtti várakozáshoz.
+\end{DoxyReturn}
+\Hypertarget{class_mine_logic_ad857999b051fc9570157bf27ec4b4ed5}\label{class_mine_logic_ad857999b051fc9570157bf27ec4b4ed5} 
+\index{MineLogic@{MineLogic}!OnTriggerEnter@{OnTriggerEnter}}
+\index{OnTriggerEnter@{OnTriggerEnter}!MineLogic@{MineLogic}}
+\doxysubsubsection{\texorpdfstring{OnTriggerEnter()}{OnTriggerEnter()}}
+{\footnotesize\ttfamily void Mine\+Logic.\+On\+Trigger\+Enter (\begin{DoxyParamCaption}\item[{Collider}]{collision }\end{DoxyParamCaption})}
+
+
+
+On\+Trigger\+Enter akkor hívódik meg, amikor egy másik Collider belép a triggerbe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em collision} & A Collider, amely belép a triggerbe.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Levi/\+Documents/\+Git\+Hub/mosze-\/2023-\/hw-\/pacman-\/amogus/\+Assets/\+Scripts/Mine\+Logic.\+cs\end{DoxyCompactItemize}

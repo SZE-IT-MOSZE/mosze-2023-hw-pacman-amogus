@@ -1,0 +1,287 @@
+\doxysection{UILogic Class Reference}
+\hypertarget{class_u_i_logic}{}\label{class_u_i_logic}\index{UILogic@{UILogic}}
+
+
+A UI-\/logikát kezelő osztály a játék különböző jelenetei között.  
+
+
+Inheritance diagram for UILogic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_u_i_logic}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_u_i_logic_a71f2b0ba365f677121816ac8f9ef8f13}\label{class_u_i_logic_a71f2b0ba365f677121816ac8f9ef8f13} 
+enum \mbox{\hyperlink{class_u_i_logic_a71f2b0ba365f677121816ac8f9ef8f13}{UItype}} \{ {\bfseries Menu}
+, {\bfseries Generator}
+, {\bfseries Play}
+ \}
+\begin{DoxyCompactList}\small\item\em Felhasználói felület típusait reprezentáló felsorolás. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_u_i_logic_ad937cb32bd5e25e49812c3da804291b2}{Load\+Scene}} (string scene\+Name)
+\begin{DoxyCompactList}\small\item\em Megadott jelenet betöltése. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_logic_ad6dff18ab53c75febd647362923ce2b1}\label{class_u_i_logic_ad6dff18ab53c75febd647362923ce2b1} 
+void {\bfseries Show\+Delete\+Button} ()
+\begin{DoxyCompactList}\small\item\em Törlés gomb megjelenítése vagy elrejtése az elmentett fájloknak megfelelően. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_logic_a080516a1976cb9432cc35e066e13a6ed}\label{class_u_i_logic_a080516a1976cb9432cc35e066e13a6ed} 
+void {\bfseries Delete\+Saves} ()
+\begin{DoxyCompactList}\small\item\em Elmentett fájlok törlése, majd az állapotnak megfelelő gombok megjelenítése vagy elrejtése. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_logic_a4c9987f30d883f10777594488346ae97}\label{class_u_i_logic_a4c9987f30d883f10777594488346ae97} 
+void {\bfseries Show\+Options} ()
+\begin{DoxyCompactList}\small\item\em Beállítások képernyő megjelenítése vagy elrejtése. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_logic_a1be029e587141f5fc9aa8959a6e12a20}\label{class_u_i_logic_a1be029e587141f5fc9aa8959a6e12a20} 
+void {\bfseries Audio\+Option\+Change} ()
+\begin{DoxyCompactList}\small\item\em Hangbeállítások változtatása. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_logic_a1b9ceab5916606bf0e607f5c470b7cd8}\label{class_u_i_logic_a1b9ceab5916606bf0e607f5c470b7cd8} 
+void {\bfseries Quit\+Game} ()
+\begin{DoxyCompactList}\small\item\em Kilépés a játékból. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_logic_aba576dd368ec425cf898f9b368393b36}\label{class_u_i_logic_aba576dd368ec425cf898f9b368393b36} 
+void {\bfseries Regenerate\+Maze} ()
+\begin{DoxyCompactList}\small\item\em A labirintus újragenerálása. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_logic_a4cb9d918f5ee880533bddb6688291451}\label{class_u_i_logic_a4cb9d918f5ee880533bddb6688291451} 
+void {\bfseries Show\+Load\+Buttons} ()
+\begin{DoxyCompactList}\small\item\em Betöltés gombok megjelenítése az elmentett állapotok alapján. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_logic_a9fc3d0d2967dd9d22145171c7f7f7b86}\label{class_u_i_logic_a9fc3d0d2967dd9d22145171c7f7f7b86} 
+void {\bfseries Show\+Save\+Buttons} ()
+\begin{DoxyCompactList}\small\item\em Mentés gombok megjelenítése vagy elrejtése a gomb aktuális állapotától függően. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_i_logic_a87eb347ae528f391049f15567dfae655}{Save\+Slot}} (int save\+Index)
+\begin{DoxyCompactList}\small\item\em Elmentett játékállás mentése a megadott mentési index helyére. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_i_logic_a78f9e427f3794691f1e59e6ab27af756}{Load\+Slot}} (int load\+Index)
+\begin{DoxyCompactList}\small\item\em Adott indexű mentés betöltése. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_i_logic_a91fd24690ac5eb8d81de2be9afbd4901}{Set\+Difficulty\+Text}} (string difficulty)
+\begin{DoxyCompactList}\small\item\em Nehézségi szint szövegének beállítása. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_logic_a49142fbe0c0c13de9c07254520c2b4b5}\label{class_u_i_logic_a49142fbe0c0c13de9c07254520c2b4b5} 
+void {\bfseries Set\+Infinite} ()
+\begin{DoxyCompactList}\small\item\em Végtelen mód beállítása a kapcsoló állapotától függően. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_i_logic_ade36dd389c972cd5ab622c7d8deac022}{Set\+Lives\+Text}} (int lives)
+\begin{DoxyCompactList}\small\item\em Életek számának beállítása és megjelenítése. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_i_logic_a8dddb60129b25b6efd54c553d8d18f53}{Set\+Score\+Text}} (int score)
+\begin{DoxyCompactList}\small\item\em Pontszám beállítása és megjelenítése. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_i_logic_a4855cfc4e9c015dea06acf04066ce800}{Show\+End\+Screen}} (bool is\+Win)
+\begin{DoxyCompactList}\small\item\em Végeredmény képernyő megjelenítése (győzelem/vereség). \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_logic_ad296856a6c1b1593e9f4782a24c71d91}\label{class_u_i_logic_ad296856a6c1b1593e9f4782a24c71d91} 
+void {\bfseries Show\+Invulnerability\+Text} ()
+\begin{DoxyCompactList}\small\item\em Sebezhetetlenség szövegének megjelenítése vagy elrejtése. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_logic_ae858693c33599884942bc19368a87c6c}\label{class_u_i_logic_ae858693c33599884942bc19368a87c6c} 
+void {\bfseries Show\+Pause\+Menu} ()
+\begin{DoxyCompactList}\small\item\em Szünetmenü megjelenítése vagy elrejtése a játék szüneteltetése mellett. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_u_i_logic_a9b0e2edf99db147b7d3afc7634a7157c}\label{class_u_i_logic_a9b0e2edf99db147b7d3afc7634a7157c} 
+\mbox{\hyperlink{class_u_i_logic_a71f2b0ba365f677121816ac8f9ef8f13}{UItype}} {\bfseries type}
+\item 
+Game\+Object \mbox{\hyperlink{class_u_i_logic_a68435464a9ae0f6696ad70850baf0184}{delete\+Button}}
+\begin{DoxyCompactList}\small\item\em Az aktuális felület típusa. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_logic_a1a8ffa47cfc52cc0aa586c88cd135337}\label{class_u_i_logic_a1a8ffa47cfc52cc0aa586c88cd135337} 
+Game\+Object {\bfseries main\+Screen}
+\item 
+\Hypertarget{class_u_i_logic_a60b2792bdd80b05b899a43aae0a95381}\label{class_u_i_logic_a60b2792bdd80b05b899a43aae0a95381} 
+Game\+Object {\bfseries options\+Screen}
+\item 
+\Hypertarget{class_u_i_logic_aec514bca26c537da8d47d06326aa56e8}\label{class_u_i_logic_aec514bca26c537da8d47d06326aa56e8} 
+Audio\+Mixer {\bfseries main\+Mixer}
+\item 
+\Hypertarget{class_u_i_logic_a483ebe65035f199ab3c16ea0c7dac444}\label{class_u_i_logic_a483ebe65035f199ab3c16ea0c7dac444} 
+Toggle {\bfseries sfx\+Toggle}
+\item 
+\Hypertarget{class_u_i_logic_a025cef99950db076d95ff67a222c50d6}\label{class_u_i_logic_a025cef99950db076d95ff67a222c50d6} 
+Toggle {\bfseries bgm\+Toggle}
+\item 
+\Hypertarget{class_u_i_logic_a7038079030088b95ae50676836d0eef9}\label{class_u_i_logic_a7038079030088b95ae50676836d0eef9} 
+Game\+Object {\bfseries save\+Buttons}
+\begin{DoxyCompactList}\small\item\em A Generator típusú felhasználói felület objektumai. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_logic_a6fdfd15a76a070e2c36a87044566123a}\label{class_u_i_logic_a6fdfd15a76a070e2c36a87044566123a} 
+TMP\+\_\+\+Text {\bfseries save\+Button\+Text}
+\item 
+\Hypertarget{class_u_i_logic_ae0f4cf66bc46cad292659ea6cb4f5c9b}\label{class_u_i_logic_ae0f4cf66bc46cad292659ea6cb4f5c9b} 
+Game\+Object {\bfseries load\+Buttons}
+\item 
+\Hypertarget{class_u_i_logic_ad4b3b64d49f1b29a311c013dd9f889e4}\label{class_u_i_logic_ad4b3b64d49f1b29a311c013dd9f889e4} 
+List$<$ Game\+Object $>$ {\bfseries load\+List}
+\item 
+\Hypertarget{class_u_i_logic_a70da9b44c4b9725e2a8c42c646ad206c}\label{class_u_i_logic_a70da9b44c4b9725e2a8c42c646ad206c} 
+TMP\+\_\+\+Text {\bfseries difficulty\+Text}
+\item 
+\Hypertarget{class_u_i_logic_ae26014b07202a5fe94a7ad449d67319a}\label{class_u_i_logic_ae26014b07202a5fe94a7ad449d67319a} 
+Toggle {\bfseries infinite\+Toggle}
+\item 
+\Hypertarget{class_u_i_logic_a05d49892f1b085a7b1d99baaef804061}\label{class_u_i_logic_a05d49892f1b085a7b1d99baaef804061} 
+Game\+Object {\bfseries pause\+Menu}
+\begin{DoxyCompactList}\small\item\em A Play típusú felhasználói felület objektumai. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_logic_aab10bc998f0588ba3425bc0e61087cb9}\label{class_u_i_logic_aab10bc998f0588ba3425bc0e61087cb9} 
+Game\+Object {\bfseries game\+Over\+Text}
+\item 
+\Hypertarget{class_u_i_logic_a9a743963dc1aaa0227a2401d77f38015}\label{class_u_i_logic_a9a743963dc1aaa0227a2401d77f38015} 
+Game\+Object {\bfseries win\+Screen}
+\item 
+\Hypertarget{class_u_i_logic_a11c661a7b4174fb5ff3fb920d43b9175}\label{class_u_i_logic_a11c661a7b4174fb5ff3fb920d43b9175} 
+Game\+Object {\bfseries lose\+Screen}
+\item 
+\Hypertarget{class_u_i_logic_a331775f17a061890a9c7bf2ceaa5f6fd}\label{class_u_i_logic_a331775f17a061890a9c7bf2ceaa5f6fd} 
+Game\+Object {\bfseries invulnerability\+Text}
+\item 
+\Hypertarget{class_u_i_logic_aeaf88486991d21917d5bb5e9f1400b61}\label{class_u_i_logic_aeaf88486991d21917d5bb5e9f1400b61} 
+TMP\+\_\+\+Text {\bfseries lives\+Text}
+\item 
+\Hypertarget{class_u_i_logic_a6d76304823cb8639ac452bf5bae51adc}\label{class_u_i_logic_a6d76304823cb8639ac452bf5bae51adc} 
+TMP\+\_\+\+Text {\bfseries score\+Text}
+\item 
+\Hypertarget{class_u_i_logic_aba0e99435b68c625abcb7a4c0b2c5b48}\label{class_u_i_logic_aba0e99435b68c625abcb7a4c0b2c5b48} 
+bool {\bfseries is\+Paused}
+\item 
+\Hypertarget{class_u_i_logic_a9f329e2777db3d79ad3e0dc8b86231bb}\label{class_u_i_logic_a9f329e2777db3d79ad3e0dc8b86231bb} 
+bool {\bfseries audio\+Played}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_u_i_logic_aaa51c12e1d773c1f119009f872492938}\label{class_u_i_logic_aaa51c12e1d773c1f119009f872492938} 
+static \mbox{\hyperlink{class_u_i_logic}{UILogic}} {\bfseries instance}
+\begin{DoxyCompactList}\small\item\em A \doxylink{class_u_i_logic}{UILogic} osztály singletonja. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_u_i_logic_a4ef5528cf987e719af1fe4b280fc6204}\label{class_u_i_logic_a4ef5528cf987e719af1fe4b280fc6204} 
+void {\bfseries Awake} ()
+\begin{DoxyCompactList}\small\item\em A singleton inicializálása. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_logic_a4963569c2dfd78b3d5f7d29774e30be9}\label{class_u_i_logic_a4963569c2dfd78b3d5f7d29774e30be9} 
+void {\bfseries Start} ()
+\begin{DoxyCompactList}\small\item\em A script kezdeti értékeinek beállítása. \end{DoxyCompactList}\item 
+\Hypertarget{class_u_i_logic_a35c132f45ce5ed89c5b35e6bb4140ad8}\label{class_u_i_logic_a35c132f45ce5ed89c5b35e6bb4140ad8} 
+void {\bfseries Update} ()
+\begin{DoxyCompactList}\small\item\em Folyamatos frissítés kereteiben történő vizsgálatok és műveletek. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A UI-\/logikát kezelő osztály a játék különböző jelenetei között. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_u_i_logic_ad937cb32bd5e25e49812c3da804291b2}\label{class_u_i_logic_ad937cb32bd5e25e49812c3da804291b2} 
+\index{UILogic@{UILogic}!LoadScene@{LoadScene}}
+\index{LoadScene@{LoadScene}!UILogic@{UILogic}}
+\doxysubsubsection{\texorpdfstring{LoadScene()}{LoadScene()}}
+{\footnotesize\ttfamily void UILogic.\+Load\+Scene (\begin{DoxyParamCaption}\item[{string}]{scene\+Name }\end{DoxyParamCaption})}
+
+
+
+Megadott jelenet betöltése. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+Name} & A betöltendő jelenet neve.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_u_i_logic_a78f9e427f3794691f1e59e6ab27af756}\label{class_u_i_logic_a78f9e427f3794691f1e59e6ab27af756} 
+\index{UILogic@{UILogic}!LoadSlot@{LoadSlot}}
+\index{LoadSlot@{LoadSlot}!UILogic@{UILogic}}
+\doxysubsubsection{\texorpdfstring{LoadSlot()}{LoadSlot()}}
+{\footnotesize\ttfamily void UILogic.\+Load\+Slot (\begin{DoxyParamCaption}\item[{int}]{load\+Index }\end{DoxyParamCaption})}
+
+
+
+Adott indexű mentés betöltése. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em load\+Index} & A betöltendő mentés indexe.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_u_i_logic_a87eb347ae528f391049f15567dfae655}\label{class_u_i_logic_a87eb347ae528f391049f15567dfae655} 
+\index{UILogic@{UILogic}!SaveSlot@{SaveSlot}}
+\index{SaveSlot@{SaveSlot}!UILogic@{UILogic}}
+\doxysubsubsection{\texorpdfstring{SaveSlot()}{SaveSlot()}}
+{\footnotesize\ttfamily void UILogic.\+Save\+Slot (\begin{DoxyParamCaption}\item[{int}]{save\+Index }\end{DoxyParamCaption})}
+
+
+
+Elmentett játékállás mentése a megadott mentési index helyére. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em save\+Index} & A mentés indexe.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_u_i_logic_a91fd24690ac5eb8d81de2be9afbd4901}\label{class_u_i_logic_a91fd24690ac5eb8d81de2be9afbd4901} 
+\index{UILogic@{UILogic}!SetDifficultyText@{SetDifficultyText}}
+\index{SetDifficultyText@{SetDifficultyText}!UILogic@{UILogic}}
+\doxysubsubsection{\texorpdfstring{SetDifficultyText()}{SetDifficultyText()}}
+{\footnotesize\ttfamily void UILogic.\+Set\+Difficulty\+Text (\begin{DoxyParamCaption}\item[{string}]{difficulty }\end{DoxyParamCaption})}
+
+
+
+Nehézségi szint szövegének beállítása. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em difficulty} & A beállítandó nehézségi szint szövege.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_u_i_logic_ade36dd389c972cd5ab622c7d8deac022}\label{class_u_i_logic_ade36dd389c972cd5ab622c7d8deac022} 
+\index{UILogic@{UILogic}!SetLivesText@{SetLivesText}}
+\index{SetLivesText@{SetLivesText}!UILogic@{UILogic}}
+\doxysubsubsection{\texorpdfstring{SetLivesText()}{SetLivesText()}}
+{\footnotesize\ttfamily void UILogic.\+Set\+Lives\+Text (\begin{DoxyParamCaption}\item[{int}]{lives }\end{DoxyParamCaption})}
+
+
+
+Életek számának beállítása és megjelenítése. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lives} & Beállítandó életek száma.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_u_i_logic_a8dddb60129b25b6efd54c553d8d18f53}\label{class_u_i_logic_a8dddb60129b25b6efd54c553d8d18f53} 
+\index{UILogic@{UILogic}!SetScoreText@{SetScoreText}}
+\index{SetScoreText@{SetScoreText}!UILogic@{UILogic}}
+\doxysubsubsection{\texorpdfstring{SetScoreText()}{SetScoreText()}}
+{\footnotesize\ttfamily void UILogic.\+Set\+Score\+Text (\begin{DoxyParamCaption}\item[{int}]{score }\end{DoxyParamCaption})}
+
+
+
+Pontszám beállítása és megjelenítése. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em score} & Beállítandó pontszám.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_u_i_logic_a4855cfc4e9c015dea06acf04066ce800}\label{class_u_i_logic_a4855cfc4e9c015dea06acf04066ce800} 
+\index{UILogic@{UILogic}!ShowEndScreen@{ShowEndScreen}}
+\index{ShowEndScreen@{ShowEndScreen}!UILogic@{UILogic}}
+\doxysubsubsection{\texorpdfstring{ShowEndScreen()}{ShowEndScreen()}}
+{\footnotesize\ttfamily void UILogic.\+Show\+End\+Screen (\begin{DoxyParamCaption}\item[{bool}]{is\+Win }\end{DoxyParamCaption})}
+
+
+
+Végeredmény képernyő megjelenítése (győzelem/vereség). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Win} & Igaz érték esetén győzelem, hamis érték esetén vereség.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_u_i_logic_a68435464a9ae0f6696ad70850baf0184}\label{class_u_i_logic_a68435464a9ae0f6696ad70850baf0184} 
+\index{UILogic@{UILogic}!deleteButton@{deleteButton}}
+\index{deleteButton@{deleteButton}!UILogic@{UILogic}}
+\doxysubsubsection{\texorpdfstring{deleteButton}{deleteButton}}
+{\footnotesize\ttfamily Game\+Object UILogic.\+delete\+Button}
+
+
+
+Az aktuális felület típusa. 
+
+A Menu típusú felhasználói felület objektumai. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Levi/\+Documents/\+Git\+Hub/mosze-\/2023-\/hw-\/pacman-\/amogus/\+Assets/\+Scripts/UILogic.\+cs\end{DoxyCompactItemize}

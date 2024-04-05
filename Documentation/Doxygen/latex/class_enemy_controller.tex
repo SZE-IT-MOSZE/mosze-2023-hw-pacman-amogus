@@ -1,0 +1,125 @@
+\doxysection{Enemy\+Controller Class Reference}
+\hypertarget{class_enemy_controller}{}\label{class_enemy_controller}\index{EnemyController@{EnemyController}}
+
+
+Az \doxylink{class_enemy_controller}{Enemy\+Controller} osztály felelős az ellenségek mozgásának és viselkedésének vezérléséért.  
+
+
+Inheritance diagram for Enemy\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_enemy_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_enemy_controller_ab90c9351f0088cff20e06b6c3c3c2f0f}\label{class_enemy_controller_ab90c9351f0088cff20e06b6c3c3c2f0f} 
+enum \mbox{\hyperlink{class_enemy_controller_ab90c9351f0088cff20e06b6c3c3c2f0f}{Direction}} \{ {\bfseries Up}
+, {\bfseries Down}
+, {\bfseries Left}
+, {\bfseries Right}
+ \}
+\begin{DoxyCompactList}\small\item\em Az ellenség mozgásának lehetséges irányai. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_enemy_controller_a44e17a22433e6d0390b7a065953e3a33}\label{class_enemy_controller_a44e17a22433e6d0390b7a065953e3a33} 
+void {\bfseries Check\+Dir} ()
+\begin{DoxyCompactList}\small\item\em Az ellenség mozgás irányát ellenõrzi. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_controller_a4ccba5743f8047d84dd8a2a25ab35bb7}{Change\+Dir}} ()
+\item 
+\Hypertarget{class_enemy_controller_af739846fd70d6c6cd844d1940a85704d}\label{class_enemy_controller_af739846fd70d6c6cd844d1940a85704d} 
+bool {\bfseries Check\+Collision} (\mbox{\hyperlink{class_enemy_controller_ab90c9351f0088cff20e06b6c3c3c2f0f}{Direction}} check\+Direction)
+\begin{DoxyCompactList}\small\item\em Az ütközést az adott irányban ellenõrzi egy-\/egy raycast segítségével. \end{DoxyCompactList}\item 
+\Hypertarget{class_enemy_controller_a248e6e039d515c99daacf99fe4b24cda}\label{class_enemy_controller_a248e6e039d515c99daacf99fe4b24cda} 
+void {\bfseries Change\+Model\+Direction} ()
+\begin{DoxyCompactList}\small\item\em Az ellenség modelljének irányát változtatja. \end{DoxyCompactList}\item 
+\Hypertarget{class_enemy_controller_afb48dedbced7a36acf7da3b2e1be32dd}\label{class_enemy_controller_afb48dedbced7a36acf7da3b2e1be32dd} 
+void {\bfseries Kill\+Enemy} ()
+\begin{DoxyCompactList}\small\item\em Az ellenség elpusztítása. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_enemy_controller_a09e8d20dc05ae9949c06a9d8d034bd35}\label{class_enemy_controller_a09e8d20dc05ae9949c06a9d8d034bd35} 
+float {\bfseries move\+Speed} = 5f
+\item 
+\Hypertarget{class_enemy_controller_ac9cd27ffa1f340f838f6f0efa53696be}\label{class_enemy_controller_ac9cd27ffa1f340f838f6f0efa53696be} 
+float {\bfseries trigger\+Range} = 1.\+8f
+\item 
+\Hypertarget{class_enemy_controller_a3e92ff3fd51e9560e5fe2a1132890bb5}\label{class_enemy_controller_a3e92ff3fd51e9560e5fe2a1132890bb5} 
+bool {\bfseries is\+Test} = true
+\item 
+\Hypertarget{class_enemy_controller_a5e4034d45b5df1b8e4831c88f07458f4}\label{class_enemy_controller_a5e4034d45b5df1b8e4831c88f07458f4} 
+\mbox{\hyperlink{class_enemy_controller_ab90c9351f0088cff20e06b6c3c3c2f0f}{Direction}} {\bfseries direction}
+\item 
+\Hypertarget{class_enemy_controller_a2c3e01a206ed5f33c428de95e2e8e497}\label{class_enemy_controller_a2c3e01a206ed5f33c428de95e2e8e497} 
+Rigidbody {\bfseries enemy\+Rb}
+\item 
+\Hypertarget{class_enemy_controller_a8f5f9225ed51c91bffc74c44eaacde18}\label{class_enemy_controller_a8f5f9225ed51c91bffc74c44eaacde18} 
+Game\+Object {\bfseries enemy\+Model}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_enemy_controller_aef5af22782327b22749e5632ad7467fb}\label{class_enemy_controller_aef5af22782327b22749e5632ad7467fb} 
+void {\bfseries Start} ()
+\begin{DoxyCompactList}\small\item\em Az objektum létrehozásakor inicializálja az ellenséget. \end{DoxyCompactList}\item 
+\Hypertarget{class_enemy_controller_a41090510cff98622fe675d1f6e3ecd82}\label{class_enemy_controller_a41090510cff98622fe675d1f6e3ecd82} 
+void {\bfseries Update} ()
+\begin{DoxyCompactList}\small\item\em A frissítés minden frame-\/ben ellenõrzi az irányt és a mozgást. \end{DoxyCompactList}\item 
+\Hypertarget{class_enemy_controller_a8d4c1a68c740af906f5d83770caf6098}\label{class_enemy_controller_a8d4c1a68c740af906f5d83770caf6098} 
+void {\bfseries On\+Trigger\+Enter} (Collider collision)
+\begin{DoxyCompactList}\small\item\em Eseménykezelõ, amely akkor hívódik meg, ha az ellenség beleütközik más objektumba. \end{DoxyCompactList}\item 
+IEnumerator \mbox{\hyperlink{class_enemy_controller_ad07b4d67321a69941bd96ccb578f6147}{Wait\+For\+Node\+Trigger}} (float wait\+Time)
+\begin{DoxyCompactList}\small\item\em Várakozik egy adott idõt (megadva másodpercben), majd végrehajtja a szükséges mûveleteket. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_enemy_controller_aef9925c1c44d82d5aa50d03630b07623}\label{class_enemy_controller_aef9925c1c44d82d5aa50d03630b07623} 
+bool {\bfseries first\+Spawn} = true
+\item 
+\Hypertarget{class_enemy_controller_a87617c887114b2fb2811ddd8a4a3f9ad}\label{class_enemy_controller_a87617c887114b2fb2811ddd8a4a3f9ad} 
+bool {\bfseries dir\+Change}
+\item 
+\Hypertarget{class_enemy_controller_a8349ce7a7c3735bb2ce5c8f9fe65cc34}\label{class_enemy_controller_a8349ce7a7c3735bb2ce5c8f9fe65cc34} 
+bool {\bfseries dir\+Change\+Node}
+\item 
+\Hypertarget{class_enemy_controller_ae7a286cbe9cf31a0b9515f5d14d09c76}\label{class_enemy_controller_ae7a286cbe9cf31a0b9515f5d14d09c76} 
+List$<$ string $>$ {\bfseries node\+Directions} = new List$<$string$>$()
+\item 
+\Hypertarget{class_enemy_controller_aa412096667030f98bc0e5a2395890fb8}\label{class_enemy_controller_aa412096667030f98bc0e5a2395890fb8} 
+Vector3 {\bfseries move\+Dir}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Az \doxylink{class_enemy_controller}{Enemy\+Controller} osztály felelős az ellenségek mozgásának és viselkedésének vezérléséért. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_enemy_controller_a4ccba5743f8047d84dd8a2a25ab35bb7}\label{class_enemy_controller_a4ccba5743f8047d84dd8a2a25ab35bb7} 
+\index{EnemyController@{EnemyController}!ChangeDir@{ChangeDir}}
+\index{ChangeDir@{ChangeDir}!EnemyController@{EnemyController}}
+\doxysubsubsection{\texorpdfstring{ChangeDir()}{ChangeDir()}}
+{\footnotesize\ttfamily void Enemy\+Controller.\+Change\+Dir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Az ellenség mozgás irányának változtatása. \Hypertarget{class_enemy_controller_ad07b4d67321a69941bd96ccb578f6147}\label{class_enemy_controller_ad07b4d67321a69941bd96ccb578f6147} 
+\index{EnemyController@{EnemyController}!WaitForNodeTrigger@{WaitForNodeTrigger}}
+\index{WaitForNodeTrigger@{WaitForNodeTrigger}!EnemyController@{EnemyController}}
+\doxysubsubsection{\texorpdfstring{WaitForNodeTrigger()}{WaitForNodeTrigger()}}
+{\footnotesize\ttfamily IEnumerator Enemy\+Controller.\+Wait\+For\+Node\+Trigger (\begin{DoxyParamCaption}\item[{float}]{wait\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Várakozik egy adott idõt (megadva másodpercben), majd végrehajtja a szükséges mûveleteket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wait\+Time} & A várakozási idõ másodpercben.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Levi/\+Documents/\+Git\+Hub/mosze-\/2023-\/hw-\/pacman-\/amogus/\+Assets/\+Scripts/Enemy\+Controller.\+cs\end{DoxyCompactItemize}
